@@ -1,16 +1,8 @@
 @charset "UTF-8";
 
-/*
-Name: Default Buttons
-URL: http://github.com/Darklg/CSSCommon
-Version: 2.2
-License: MIT
-*/
-
 /* ----------------------------------------------------------
   Button : Theme
 ---------------------------------------------------------- */
-
 
 /* Default themes
 -------------------------- */
@@ -143,4 +135,23 @@ License: MIT
 
 .btn-img:before {
     content: url(../images/12x10-blue.gif);
+}
+
+/* ----------------------------------------------------------
+  Double button
+---------------------------------------------------------- */
+
+.cssc-button--default.cssc-button-double {
+    padding: 10px 40px;
+}
+
+.cssc-button--default.cssc-button-double > strong {
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.cssc-button--default.cssc-button-double > span {
+    font-size: 12px;
+    line-height: 16px;
+    color: #676767;
 }
