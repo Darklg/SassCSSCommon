@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Animations
+---------------------------------------------------------- */
+
+/* Fade in
+-------------------------- */
+
+@-webkit-keyframes cssc-animate-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.999;
+    }
+}
+
+@keyframes cssc-animate-fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0.999;
+    }
+}
+
+.cssc-animate-fadein {
+    opacity: 0;
+    -webkit-animation: cssc-animate-fadein forwards 0.75s 1 ease;
+    -o-animation: cssc-animate-fadein forwards 0.75s 1 ease;
+}
+
+/* Fade out
+-------------------------- */
+
+@-webkit-keyframes cssc-animate-fadeout {
+    0% {
+        opacity: 0.999;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes cssc-animate-fadeout {
+    0% {
+        opacity: 0.999;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.cssc-animate-fadeout {
+    opacity: 0.999;
+    -webkit-animation: cssc-animate-fadeout forwards 0.75s 1 ease;
+    -o-animation: cssc-animate-fadeout forwards 0.75s 1 ease;
+}

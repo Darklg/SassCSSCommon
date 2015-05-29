@@ -58,6 +58,13 @@
 @import "components/tooltip/core";
 @import "components/tooltip/theme";
 
+/* Effects */
+
+@import "components/effects";
+@import "components/effects/hovers";
+@import "components/effects/animations";
+@import "components/effects/scrolleffects";
+
 /* Various */
 
 @import "components/tables";
@@ -68,5 +75,4 @@
 @import "components/tabs";
 @import "components/images";
 @import "components/print";
-@import "components/effects";
 @import "components/triggers";
