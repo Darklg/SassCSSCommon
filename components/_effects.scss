@@ -3,7 +3,7 @@
 /*
 Name: Effects
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.12
+Version: 0.13
 License: MIT
 */
 
@@ -252,4 +252,45 @@ License: MIT
     left: 0;
     opacity: 0.99;
     filter: alpha(opacity=99);
+}
+
+/* ----------------------------------------------------------
+  Image Grid
+---------------------------------------------------------- */
+
+.image-grid-item {
+    z-index: 1;
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+}
+
+.image-grid-item .ig-item__bg {
+    z-index: 1;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
+    margin: auto;
+    background: transparent no-repeat center center;
+    background-size: cover;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+.image-grid-item:hover .ig-item__bg {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+.image-grid-item .ig-item__content {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
 }
