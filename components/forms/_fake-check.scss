@@ -32,9 +32,11 @@
     position: absolute;
     top: -0.5em;
     left: -0.5em;
-    width: 10em;
-    height: 10em;
+    font-size: 2em;
     opacity: 0.01;
+    -webkit-transform: scale(10);
+    -moz-transform: scale(10);
+    transform: scale(10);
     cursor: pointer;
 }
 
