@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.2.1
+Version: 2.3
 License: MIT
 */
 
@@ -20,12 +20,17 @@ License: MIT
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0 1em;
     border: 0;
     text-align: center;
     text-decoration: none;
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 2.5;
     white-space: nowrap;
     vertical-align: middle;
+    background: #fff;
     -webkit-background-clip: padding-box;
     cursor: pointer;
     -webkit-user-select: none;
@@ -40,6 +45,10 @@ License: MIT
 .cssc-button:focus {
     text-decoration: none;
     outline: 0;
+}
+
+.cssc-button[disabled] {
+    cursor: not-allowed;
 }
 
 /* Icons
