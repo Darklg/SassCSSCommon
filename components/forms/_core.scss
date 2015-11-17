@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.3.2
+Version: 2.3.3
 License: MIT
 */
 
@@ -208,8 +208,14 @@ button {
    ----------------------- */
 
 .form-append {
-    min-height: 1;
-    overflow: visible;
+    min-height: 1px;
+}
+
+.form-append:after {
+    content: '';
+    display: table;
+    clear: both;
+    width: 100%;
 }
 
 .form-append > * {
