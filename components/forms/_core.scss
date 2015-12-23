@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.3.3
+Version: 2.3.4
 License: MIT
 */
 
@@ -156,6 +156,7 @@ button {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
+    border: none;
     overflow: hidden;
     text-align: left;
     text-indent: 0.01px;
@@ -163,6 +164,7 @@ button {
     line-height: 1;
     white-space: nowrap;
     cursor: pointer;
+    -ms-appearance: none;
 }
 
 .cssc-select::-ms-expand {
