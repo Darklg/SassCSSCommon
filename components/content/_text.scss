@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Content text
+---------------------------------------------------------- */
+
+.cssc-content {
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+/* Text
+-------------------------- */
+
+.cssc-content {
+    p,
+    li {
+        font: inherit;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+        word-wrap: break-word;
+    }
+}
+
+/* Titles
+-------------------------- */
+
+.cssc-content {
+    h2,
+    h3,
+    h4 {
+        margin-bottom: 0.5em;
+        font: inherit;
+        font-size: 1.1em;
+        font-weight: bold;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.4em;
+    }
+
+    * + h2,
+    *:not(h2):not(h4) + h3,
+    *:not(h2):not(h3) + h4 {
+        margin-top: 1em;
+    }
+}
+
+/* Lists
+-------------------------- */
+
+.cssc-content {
+    ul {
+        list-style: inside disc;
+    }
+
+    ul ul {
+        list-style-type: circle;
+    }
+
+    ol {
+        list-style: inside decimal;
+    }
+}
+
+/* Definition lists
+-------------------------- */
+
+.cssc-content {
+    dd + dt {
+        margin-top: 0.5em;
+    }
+
+    dt {
+        font-weight: bold;
+    }
+}
+
+/* Medias
+-------------------------- */
+
+.cssc-content {
+    & > video,
+    & > iframe {
+        width: 100%;
+    }
+
+    .alignleft {
+        float: left;
+        margin: 0 1em 0.5em 0;
+    }
+
+    .aligncenter {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .alignright {
+        float: right;
+        margin: 0 0 0.5em 1em;
+    }
+}
+
+/* Margins
+-------------------------- */
+
+.cssc-content {
+    ul ul,
+    ol ol {
+        margin-bottom: 0;
+        padding-left: 1em;
+    }
+
+    blockquote p {
+        margin-bottom: 0.5em;
+    }
+}
+
+.cssc-content p,
+.cssc-content blockquote,
+.cssc-content table,
+.cssc-content address,
+.cssc-content > iframe,
+.cssc-content > video,
+.cssc-content dl,
+.cssc-content ol,
+.cssc-content ul,
+.cssc-content,
+.cssc-block {
+    margin-bottom: 1.4em;
+}
+
+.cssc-content dl:last-child,
+.cssc-content ol:last-child,
+.cssc-content ul:last-child,
+.cssc-content blockquote:last-child,
+.cssc-content blockquote p:last-child,
+.cssc-content p:last-child,
+.cssc-block:last-child {
+    margin-bottom: 0;
+}

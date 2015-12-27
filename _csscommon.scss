@@ -13,11 +13,17 @@
 @import "components/common/messages";
 @import "components/common/verticalcenter";
 @import "components/common/navtoggle";
-@import "components/content";
 
 /* ----------------------------------------------------------
   Modules
 ---------------------------------------------------------- */
+
+/* Content */
+
+@import "components/content";
+@import "components/content/text";
+@import "components/content/module";
+
 
 /* Buttons */
 
