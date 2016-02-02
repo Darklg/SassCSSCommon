@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.3
+Version: 2.3.1
 License: MIT
 */
 
@@ -129,4 +129,12 @@ License: MIT
     margin-left: -1px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+}
+
+/* Buttons' modes
+-------------------------- */
+
+.cssc-button--wide {
+    display: block;
+    width: 100%;
 }
