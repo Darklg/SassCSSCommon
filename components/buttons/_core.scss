@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.3.1
+Version: 2.4
 License: MIT
 */
 
@@ -11,6 +11,7 @@ License: MIT
   Button : core
 ---------------------------------------------------------- */
 
+.buttonreset,
 .cssc-button {
     display: inline-block;
     z-index: 1;
@@ -41,12 +42,16 @@ License: MIT
     user-drag: none;
 }
 
+.buttonreset:hover,
+.buttonreset:focus,
 .cssc-button:hover,
 .cssc-button:focus {
     text-decoration: none;
     outline: 0;
 }
 
+.buttonreset:hover,
+.buttonreset:focus,
 .cssc-button[disabled] {
     cursor: not-allowed;
 }
