@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+/*
+Name: Common Header
+URL: http://github.com/Darklg/CSSCommon
+Version: 0.1
+License: MIT
+*/
+
+/* ----------------------------------------------------------
+  Wrapper
+---------------------------------------------------------- */
+
+.cssc-header__wrapper,
+.cssc-header__content,
+.cssc-header {
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.has--fixed-header .cssc-header__wrapper,
+.cssc-header {
+    z-index: 3;
+}
+
+.cssc-header__wrapper {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+
+.has--fixed-header .cssc-header__wrapper {
+    position: fixed;
+}
+
+.cssc-header__content {
+    height: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------
+  Areas in header
+---------------------------------------------------------- */
+
+%cssc-header__area {
+    z-index: 1;
+    position: relative;
+}
+
+/* Mixins
+-------------------------- */
+
+%cssc-header__area--pos {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+}
+
+%cssc-header__area--left {
+    left: 0;
+    text-align: left;
+}
+
+%cssc-header__area--right {
+    right: 0;
+    text-align: right;
+}
+
+/* ----------------------------------------------------------
+  Blocks
+---------------------------------------------------------- */
+
+.cssc-header__block {
+    display: inline-block;
+    z-index: 1;
+    position: relative;
+    vertical-align: top;
+}

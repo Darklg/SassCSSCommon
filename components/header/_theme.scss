@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/*
+<script type="script/sass">
+.header__menu {
+    @extend %cssc-header__area;
+    @extend %cssc-header__area--pos;
+    @extend %cssc-header__area--left;
+}
+.header__links {
+    @extend %cssc-header__area;
+    @extend %cssc-header__area--pos;
+    @extend %cssc-header__area--right;
+}
+</script>
+
+<header class="cssc-header">
+    <div class="cssc-header__wrapper">
+        <div class="cssc-header__content">
+            <div class="header__menu">menu</div>
+            <h1 class="header__logo"><a href="#"><img src="http://placehold.it/100x30/?text=logo" alt="" /></a></h1>
+            <div class="header__links">
+                <div class="cssc-header__block"><a href="#">Account</a></div>
+                <div class="cssc-header__block"><a href="#">Cart</a></div>
+            </div>
+        </div>
+    </div>
+</header>
+*/
+
+/* ----------------------------------------------------------
+  Theme
+---------------------------------------------------------- */
+
+/* Header height
+-------------------------- */
+
+.cssc-header__wrapper,
+.cssc-header {
+    height: 100px;
+}
+
+/* Wrapper style
+-------------------------- */
+
+.cssc-header__wrapper {
+    padding: 10px 15px;
+    background-color: #FFF;
+}
+
+/* Content max width
+-------------------------- */
+
+.cssc-header__content {
+    width: 940px;
+}
+
+/* Blocks spacing
+-------------------------- */
+
+.cssc-header__block + .cssc-header__block {
+    margin-left: 20px;
+}
+
+/* Demo code
+-------------------------- */
+
+.header__logo {
+    @extend %cssc-header__area;
+    margin: 0;
+}
+
+.header__menu {
+    @extend %cssc-header__area;
+    @extend %cssc-header__area--pos;
+    @extend %cssc-header__area--left;
+}
+
+.header__links {
+    @extend %cssc-header__area;
+    @extend %cssc-header__area--pos;
+    @extend %cssc-header__area--right;
+}
