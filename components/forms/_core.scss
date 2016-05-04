@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.4.1
+Version: 2.4.2
 License: MIT
 */
 
@@ -119,6 +119,7 @@ button {
 .cssc-form input[type=text],
 .cssc-form input[type=url],
 .cssc-form input[type=email],
+.cssc-form input[type=search],
 .cssc-form input[type=password] {
     -webkit-appearance: none;
     -moz-appearance: none;
