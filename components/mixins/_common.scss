@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.5.3
+Version: 0.5.4
 License: MIT
 */
 
@@ -108,18 +108,28 @@ License: MIT
   Responsive display
 ---------------------------------------------------------- */
 
+/* Hide on mobile devices */
 @media($mobile_only) {
     .hide-on-mobile {
         display: none!important;
     }
 }
 
+/* Hide on desktop devices */
 @media($mobile_excluded) {
     .hide-on-desktop {
         display: none!important;
     }
 }
 
+/* Hide on devices larger than tablets */
+@media($desktop_only) {
+    .hide-above-tablet {
+        display: none!important;
+    }
+}
+
+/* Hide on tablets and smaller devices */
 @media($desktop_excluded) {
     .hide-tablet-below {
         display: none!important;
