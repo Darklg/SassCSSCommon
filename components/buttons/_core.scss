@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.4.1
+Version: 2.4.2
 License: MIT
 */
 
@@ -74,65 +74,6 @@ License: MIT
 .cssc-button-icn-large:before,
 .cssc-button-icn-large:after {
     font-size: 115%;
-}
-
-/* ----------------------------------------------------------
-  Utilities
----------------------------------------------------------- */
-
-/* Container
--------------------------- */
-
-.cssc-button-container {
-    z-index: 1;
-    position: relative;
-    text-align: center;
-}
-
-.cssc-button-container:before {
-    content: '';
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid #ddd;
-}
-
-.cssc-button-container .cssc-button {
-    z-index: 2;
-    position: relative;
-}
-
-/* Double button
--------------------------- */
-
-.cssc-button.cssc-button-double {
-    height: auto;
-}
-
-.cssc-button-double> * {
-    display: block;
-}
-
-/* Buttons group
--------------------------- */
-
-.button-group {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.button-group .cssc-button:not(:last-child) {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.button-group .cssc-button + .cssc-button {
-    margin-left: -1px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
 
 /* Buttons' modes
