@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Base des layouts
+---------------------------------------------------------- */
+
+.cssc-lay {
+    display: table;
+    clear: both;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.cssc-lay > * {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.cssc-lay > .col-main {
+    width: auto;
+}
+
+/* Base de style */
+
+.cssc-lay > .col-side {
+    width: 220px;
+}
+
+/* Wide layout d'exemple */
+
+.clay-wide > .col-side {
+    width: 300px;
+}
+
+/* Responsive Layout */
+
+.clay-resp {
+    max-width: 940px;
+}
+
+.clay-resp > .col-side {
+    width: 220px;
+}
+
+@media all and (max-width:600px) {
+    .cssc-is-responsive .clay-resp {
+        display: block;
+        width: auto;
+    }
+
+    .cssc-is-responsive .clay-resp > .col-side,
+    .cssc-is-responsive .clay-resp > .col-main {
+        display: block;
+        width: auto;
+    }
+
+    .cssc-is-responsive .clay-resp > .col-side .liste-widgets > * {
+        display: inline-block;
+        width: 48%;
+    }
+
+    .cssc-is-responsive .clay-resp > .col-side .liste-widgets >:nth-child(even) {
+        margin-left: 2%;
+    }
+}
+
+@media all and (max-width:400px) {
+    .cssc-is-responsive .clay-resp > .col-side .liste-widgets > * {
+        display: block;
+    }
+
+    .cssc-is-responsive .clay-resp > .col-side .liste-widgets >:nth-child(even) {
+        margin-left: 0;
+    }
+}

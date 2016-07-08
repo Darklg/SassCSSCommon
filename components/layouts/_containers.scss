@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Containers
+---------------------------------------------------------- */
+
+/* Dimensions
+-------------------------- */
+
+.centered-container {
+    padding: 0 10px;
+    min-width: 960px;
+}
+
+.centered-container > * {
+    max-width: 940px;
+}
+
+/* Core
+-------------------------- */
+
+/* Container centré */
+
+.centered-container {
+    z-index: 1;
+    clear: both;
+    position: relative;
+    text-align: center;
+}
+
+.cssc-is-responsive .centered-container {
+    min-width: 0;
+}
+
+/* Contenu flottant */
+
+.centered-container > * {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.cssc-is-responsive .centered-container > * {
+    width: auto;
+}
+
+.centered-container .cc-full {
+    width: auto;
+    max-width: none;
+}
+
+.centered-container .cc-full-bg,
+.centered-container .cc-full-image {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    background: transparent repeat top center;
+}
+
+/* Full image is a separate background with a cover image for animating or effects */
+
+.centered-container .cc-full-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/* Needed to be over a cc-full-image/bg background */
+
+.centered-container .cc-content {
+    z-index: 2;
+    position: relative;
+}
