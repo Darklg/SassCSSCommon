@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.6
+Version: 0.7
 License: MIT
 */
 
@@ -259,4 +259,18 @@ $browserPrefix: '';
         visibility: visible;
         opacity: 0.99;
     }
+}
+
+/* ----------------------------------------------------------
+  Full width container : https://css-tricks.com/?p=243825
+---------------------------------------------------------- */
+
+%full-width-container {
+    z-index: 1;
+    position: relative;
+    right: 50%;
+    left: 50%;
+    width: 100vw;
+    margin-right: -50vw;
+    margin-left: -50vw;
 }
