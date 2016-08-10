@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Fake checkbox & Fake radio without touching markup
+---------------------------------------------------------- */
+
+/* <input type="checkbox" /><label>test</label> */
+/* [type="checkbox"]{@extend %fake-check-ghost} */
+
+%fake-radio-ghost,
+%fake-check-ghost {
+    & {
+        z-index: 1;
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+        opacity: 0.01;
+    }
+
+    & + label {
+        display: block;
+        z-index: 1;
+        position: relative;
+        padding-left: 2em;
+    }
+
+    & + label:before {
+        content: '✓';
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1em;
+        height: 1em;
+        margin: auto;
+        border: 1px solid #000;
+        text-align: center;
+        line-height: 1;
+        color: transparent;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+
+    &:checked + label:before {
+        color: inherit;
+    }
+}
+
+/* Radio
+-------------------------- */
+
+%fake-radio-ghost {
+    & + label:before {
+        content: '•';
+        border-radius: 999px;
+    }
+}
