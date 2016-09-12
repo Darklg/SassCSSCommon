@@ -165,3 +165,44 @@
     -webkit-transform-origin: center center;
     transform-origin: center center;
 }
+
+/* Rotate Z
+-------------------------- */
+
+@-webkit-keyframes cssc-animate-rotatez {
+    0% {
+        -webkit-transform: rotateZ(0);
+    }
+
+    100% {
+        -webkit-transform: rotateZ(360deg);
+    }
+}
+
+@-moz-keyframes cssc-animate-rotatez {
+    0% {
+        -moz-transform: rotateZ(0);
+    }
+
+    100% {
+        -moz-transform: rotateZ(360deg);
+    }
+}
+
+@keyframes cssc-animate-rotatez {
+    0% {
+        transform: rotateZ(0);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+.cssc-animate-rotatez {
+    -webkit-animation: cssc-animate-rotatez forwards 0.75s 1 ease;
+    -moz-animation: cssc-animate-rotatez forwards 0.75s 1 ease;
+    -o-animation: cssc-animate-rotatez forwards 0.75s 1 ease;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+}
