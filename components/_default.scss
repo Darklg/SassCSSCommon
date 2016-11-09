@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.8
+Version: 2.8.1
 License: MIT
 */
 
@@ -450,6 +450,7 @@ a img,
 .aimginv,
 .cssc-btn,
 .trans-opa {
+    outline: 1px solid transparent;
     -webkit-transition: opacity 0.3s ease;
     -moz-transition: opacity 0.3s ease;
     -o-transition: opacity 0.3s ease;
