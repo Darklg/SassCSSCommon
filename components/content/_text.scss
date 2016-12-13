@@ -5,8 +5,8 @@
 ---------------------------------------------------------- */
 
 .cssc-content {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: $font-size;
+    line-height: $line-height;
 }
 
 /* Text
@@ -133,7 +133,7 @@
 .cssc-content ul,
 .cssc-content,
 .cssc-block {
-    margin-bottom: 1.4em;
+    margin-bottom: $line-height-em;
 }
 
 .cssc-content dl:last-child,
