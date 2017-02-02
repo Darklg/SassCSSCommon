@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.4.2
+Version: 2.5
 License: MIT
 */
 
@@ -13,46 +13,52 @@ License: MIT
 
 .buttonreset,
 .cssc-button {
-    display: inline-block;
-    z-index: 1;
-    position: relative;
-    -webkit-appearance: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0 1em;
-    border: 0;
-    text-align: center;
-    text-decoration: none;
+    & {
+        display: inline-block;
+        z-index: 1;
+        position: relative;
+        -webkit-appearance: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        text-align: center;
+        text-decoration: none;
+        font: inherit;
+        white-space: nowrap;
+        vertical-align: inherit;
+        background: transparent;
+        -webkit-background-clip: padding-box;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        -moz-user-drag: -moz-none;
+        user-drag: none;
+    }
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+        outline: 0;
+    }
+
+    &[disabled] {
+        cursor: not-allowed;
+    }
+}
+
+.cssc-button {
+    padding: 0 1.5em;
     font-family: sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: 2.5;
-    white-space: nowrap;
     vertical-align: middle;
     background: #fff;
-    -webkit-background-clip: padding-box;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-    -webkit-user-drag: none;
-    -moz-user-drag: -moz-none;
-    user-drag: none;
-}
-
-.buttonreset:hover,
-.buttonreset:focus,
-.cssc-button:hover,
-.cssc-button:focus {
-    text-decoration: none;
-    outline: 0;
-}
-
-.buttonreset[disabled],
-.cssc-button[disabled] {
-    cursor: not-allowed;
 }
 
 /* Icons
@@ -64,16 +70,16 @@ License: MIT
 }
 
 .cssc-button:before {
-    margin-right: 4px;
+    margin-right: 0.5em;
 }
 
 .cssc-button:after {
-    margin-left: 4px;
+    margin-left: 0.5em;
 }
 
 .cssc-button-icn-large:before,
 .cssc-button-icn-large:after {
-    font-size: 115%;
+    font-size: 1.15em;
 }
 
 /* Buttons' modes
