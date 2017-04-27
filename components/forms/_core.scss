@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.5.2
+Version: 2.5.3
 License: MIT
 */
 
@@ -167,6 +167,10 @@ button {
     white-space: nowrap;
     cursor: pointer;
     -ms-appearance: none;
+}
+
+.cssc-select[multiple] {
+    overflow-y: auto;
 }
 
 .cssc-select::-ms-expand {
