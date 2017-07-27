@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.8.1
+Version: 2.9
 License: MIT
 */
 
@@ -415,7 +415,6 @@ a:active {
 
 .aimginv {
     opacity: 0.70;
-    filter: alpha(opacity=70);
 }
 
 /* .99 Opacity avoids a nasty effect on Webkit */
@@ -424,13 +423,11 @@ a img,
 .aimginv:hover,
 .aimg {
     opacity: 0.999;
-    filter: alpha(opacity=99);
 }
 
 .aimg:hover,
 a:hover img {
     opacity: 0.80;
-    filter: alpha(opacity=80);
 }
 
 /* ----------------------------------------------------------
@@ -440,8 +437,6 @@ a:hover img {
 a,
 .trans-col {
     -webkit-transition: color 0.3s ease;
-    -moz-transition: color 0.3s ease;
-    -o-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
 
@@ -452,15 +447,11 @@ a img,
 .trans-opa {
     outline: 1px solid transparent;
     -webkit-transition: opacity 0.3s ease;
-    -moz-transition: opacity 0.3s ease;
-    -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
 }
 
 .trans-all {
     -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
 
@@ -471,7 +462,16 @@ textarea,
 .cssc-button,
 .trans-button {
     -webkit-transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
-    -moz-transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
-    -o-transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
     transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
+}
+
+/* ----------------------------------------------------------
+  Disable transitions
+  Thx https://twitter.com/kizmarh/status/889422529269510145
+---------------------------------------------------------- */
+
+@​media(prefers-reduced-motion:reduce) {
+    * {
+        transition: none !important;
+    }
 }
