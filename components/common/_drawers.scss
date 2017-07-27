@@ -40,6 +40,7 @@
 }
 
 .wdrw > a:focus + .submenu,
+.wdrw .submenu:focus-within,
 .wdrw:hover .submenu {
     visibility: visible;
     z-index: 999;

@@ -13,16 +13,12 @@ samp,
     display: inline-block;
     padding: 3px;
     border: 1px solid #ddd;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-radius: 2px;
     text-shadow: 1px 1px 0 rgb(255,255,255);
     font: 11px/1.2 'Lucida Console',Monospace;
     vertical-align: middle;
     color: #333;
     background: #f5f5f5;
-    *display: inline;
-    *zoom: 1;
 }
 
 tt:hover,

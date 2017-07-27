@@ -22,8 +22,6 @@
     *color: transparent;
     *font-size: 1px;
     *line-height: 0;
-    *display: inline;
-    *zoom: 1;
 }
 
 .cssc-btn-px {
@@ -52,7 +50,6 @@
 .cssc-btn:focus,
 .cssc-btn:hover {
     opacity: 0.50;
-    filter: alpha(opacity=50);
 }
 
 /* ----------------------------------------------------------
