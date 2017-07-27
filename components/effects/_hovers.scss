@@ -22,12 +22,10 @@
 .cssc-inverted-hover--images:hover a:hover img,
 .cssc-inverted-hover--images a img {
     opacity: 0.999;
-    filter: alpha(opacity=99);
 }
 
 .cssc-inverted-hover--images:hover a img {
     opacity: 0.30;
-    filter: alpha(opacity=30);
 }
 
 /* ----------------------------------------------------------
@@ -102,7 +100,6 @@
 
     &:hover .clean {
         opacity: 0.999;
-        filter: alpha(opacity=99);
     }
 }
 

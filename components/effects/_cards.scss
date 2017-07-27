@@ -14,8 +14,6 @@
     transform: translateZ(0);
     -webkit-perspective: 500px;
     perspective: 500px;
-    *display: inline;
-    *zoom: 1;
 }
 
 .cssc-card .front,
@@ -28,7 +26,6 @@
     left: 0;
     overflow: hidden;
     -webkit-transition: -webkit-transform 0.3s ease;
-    -moz-transition: -moz-transform 0.3s ease;
     transition: transform 0.3s ease;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;

@@ -3,7 +3,7 @@
 /*
 Name: Effects
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.16
+Version: 0.17
 License: MIT
 */
 
@@ -228,13 +228,11 @@ License: MIT
     left: 0;
     border-color: #333;
     opacity: 0;
-    filter: alpha(opacity=00);
 }
 
 .cssc-effects-underline--left:hover:after {
     right: 0;
     opacity: 0.99;
-    filter: alpha(opacity=99);
 }
 
 /* From center */
@@ -244,14 +242,12 @@ License: MIT
     left: 50%;
     border-color: #333;
     opacity: 0;
-    filter: alpha(opacity=00);
 }
 
 .cssc-effects-underline--center:hover:after {
     right: 0;
     left: 0;
     opacity: 0.99;
-    filter: alpha(opacity=99);
 }
 
 /* ----------------------------------------------------------
