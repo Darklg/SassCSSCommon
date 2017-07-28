@@ -39,10 +39,17 @@
     z-index: 1000;
 }
 
-.wdrw > a:focus + .submenu,
-.wdrw .submenu:focus-within,
-.wdrw:hover .submenu {
+%wdrw-visible {
     visibility: visible;
     z-index: 999;
     opacity: 1;
+}
+
+.wdrw > a:focus + .submenu,
+.wdrw:hover .submenu {
+    @extend %wdrw-visible;
+}
+
+.wdrw .submenu:focus-within {
+    @extend %wdrw-visible;
 }
