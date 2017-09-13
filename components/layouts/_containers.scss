@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+$content_width_wide: 940px!default;
+
 /* ----------------------------------------------------------
   Containers
 ---------------------------------------------------------- */
@@ -75,4 +77,22 @@
 .centered-container .cc-content {
     z-index: 2;
     position: relative;
+}
+
+/* Responsive centered
+-------------------------- */
+
+%responsive-centered-container {
+    @extend %responsive-padding-lr!optional;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+%responsive-centered-container-child {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $content_width_wide;
 }
