@@ -19,11 +19,11 @@
         margin-bottom: 0;
     }
 
-    .twoboxes li.box:first-child {
+    .twoboxes .box:first-child {
         padding-right: 1em;
     }
 
-    .twoboxes li.box + li.box {
+    .twoboxes .box + .box {
         padding-left: 1em;
     }
 }

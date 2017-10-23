@@ -42,15 +42,15 @@
     margin-bottom: 0;
 }
 
-.cssc-form--default .twoboxes li.box:first-child {
+.cssc-form--default .twoboxes .box:first-child {
     padding-right: 10px;
 }
 
-.cssc-form--default .twoboxes li.box + li.box {
+.cssc-form--default .twoboxes .box + .box {
     padding-left: 10px;
 }
 
-.cssc-form--default.float-form .twoboxes li.box + li.box {
+.cssc-form--default.float-form .twoboxes .box + .box {
     padding-left: 140px;
 }
 
