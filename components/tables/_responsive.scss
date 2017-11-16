@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Responsive Tables
+---------------------------------------------------------- */
+
+@media($mobile_only) {
+    %responsive-table td,
+    %responsive-table tr,
+    %responsive-table tbody,
+    %responsive-table {
+        display: block;
+        border: 0;
+    }
+
+    %responsive-table td {
+        padding: 0;
+        border: 0;
+    }
+
+    %responsive-table tfoot,
+    %responsive-table thead {
+        display: none;
+    }
+
+    %responsive-table tr {
+        padding: 1em 0;
+    }
+
+    %responsive-table td {
+        margin-bottom: 0.3em;
+        padding: 0;
+        border: 0!important;
+        text-align: left!important;
+    }
+
+    %responsive-table td:before {
+        content: attr(data-th);
+        display: block;
+        font-weight: bold;
+    }
+
+    %responsive-table tr + tr {
+        border-top: 1px solid #F0F0F0;
+    }
+}
