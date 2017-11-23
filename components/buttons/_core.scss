@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.5
+Version: 2.5.1
 License: MIT
 */
 
@@ -24,6 +24,7 @@ License: MIT
         margin: 0;
         padding: 0;
         border: 0;
+        border-radius: 0;
         text-align: center;
         text-decoration: none;
         font: inherit;
@@ -38,6 +39,11 @@ License: MIT
         -webkit-user-drag: none;
         -moz-user-drag: -moz-none;
         user-drag: none;
+    }
+
+    &::-moz-focus-inner {
+        border: 0;
+        padding: 0;
     }
 
     &:hover,
