@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.8
+Version: 0.9
 License: MIT
 */
 
@@ -268,6 +268,22 @@ $mobile-padding-neg: -15px !default;
 /* Top / Bottom
 -------------------------- */
 
+%responsive-relative-top {
+    top: $desktop-padding;
+}
+
+%responsive-relative-bottom {
+    bottom: $desktop-padding;
+}
+
+%responsive-relative-top-inv {
+    top: $desktop-padding-neg;
+}
+
+%responsive-relative-bottom-inv {
+    bottom: $desktop-padding-neg;
+}
+
 %responsive-padding-tb {
     padding-top: $desktop-padding;
     padding-bottom: $desktop-padding;
@@ -279,6 +295,22 @@ $mobile-padding-neg: -15px !default;
 }
 
 @media($desktop_excluded) {
+    %responsive-relative-top {
+        top: $tablet-padding;
+    }
+
+    %responsive-relative-bottom {
+        bottom: $tablet-padding;
+    }
+
+    %responsive-relative-top-inv {
+        top: $tablet-padding-neg;
+    }
+
+    %responsive-relative-bottom-inv {
+        bottom: $tablet-padding-neg;
+    }
+
     %responsive-padding-tb {
         padding-top: $tablet-padding;
         padding-bottom: $tablet-padding;
@@ -291,6 +323,22 @@ $mobile-padding-neg: -15px !default;
 }
 
 @media($mobile_only) {
+    %responsive-relative-top {
+        top: $mobile-padding;
+    }
+
+    %responsive-relative-bottom {
+        bottom: $mobile-padding;
+    }
+
+    %responsive-relative-top-inv {
+        top: $mobile-padding-neg;
+    }
+
+    %responsive-relative-bottom-inv {
+        bottom: $mobile-padding-neg;
+    }
+
     %responsive-padding-tb {
         padding-top: $mobile-padding;
         padding-bottom: $mobile-padding;
@@ -305,6 +353,22 @@ $mobile-padding-neg: -15px !default;
 /* Left / Right
 -------------------------- */
 
+%responsive-relative-left {
+    left: $desktop-padding;
+}
+
+%responsive-relative-right {
+    right: $desktop-padding;
+}
+
+%responsive-relative-left-inv {
+    left: $desktop-padding-neg;
+}
+
+%responsive-relative-right-inv {
+    right: $desktop-padding-neg;
+}
+
 %responsive-padding-lr {
     padding-right: $desktop-padding;
     padding-left: $desktop-padding;
@@ -316,6 +380,22 @@ $mobile-padding-neg: -15px !default;
 }
 
 @media($desktop_excluded) {
+    %responsive-relative-left {
+        left: $tablet-padding;
+    }
+
+    %responsive-relative-right {
+        right: $tablet-padding;
+    }
+
+    %responsive-relative-left-inv {
+        left: $tablet-padding-neg;
+    }
+
+    %responsive-relative-right-inv {
+        right: $tablet-padding-neg;
+    }
+
     %responsive-padding-lr {
         padding-right: $tablet-padding;
         padding-left: $tablet-padding;
@@ -328,6 +408,22 @@ $mobile-padding-neg: -15px !default;
 }
 
 @media($mobile_only) {
+    %responsive-relative-left {
+        left: $mobile-padding;
+    }
+
+    %responsive-relative-right {
+        right: $mobile-padding;
+    }
+
+    %responsive-relative-left-inv {
+        left: $mobile-padding-neg;
+    }
+
+    %responsive-relative-right-inv {
+        right: $mobile-padding-neg;
+    }
+
     %responsive-padding-lr {
         padding-right: $mobile-padding;
         padding-left: $mobile-padding;
