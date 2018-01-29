@@ -9,6 +9,10 @@ $line-height-em: 1.3em !default;
 ---------------------------------------------------------- */
 
 .cssc-content {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 61em;
     font-size: $font-size;
     line-height: $line-height;
 }
