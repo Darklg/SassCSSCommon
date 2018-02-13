@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.1
+Version: 2.9.2
 License: MIT
 */
 
@@ -34,14 +34,14 @@ ul {
 
 blockquote,
 q {
-    quotes: none;
-}
+    & {
+        quotes: none;
+    }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-    content: '';
+    &:before,
+    &:after {
+        content: '';
+    }
 }
 
 a,
@@ -374,7 +374,7 @@ hr {
     overflow: hidden;
 }
 
-hr.clearfix {
+hr[class*="clearfix"] {
     height: 0;
     border: 0;
     outline: 0;
@@ -399,24 +399,27 @@ hr.clearfix {
    Links
 ---------------------------------------------------------- */
 
+%mainlink,
 a {
-    color: #69C;
+    & {
+        color: #69C;
+    }
+
+    &:focus,
+    &:hover {
+        color: #369;
+    }
+
+    &:active {
+        color: #000;
+    }
 }
 
-a:focus,
-a:hover {
-    color: #369;
-}
-
-a:active {
-    color: #000;
-}
+/* .99 Opacity avoids a nasty effect on Webkit */
 
 .aimginv {
     opacity: 0.70;
 }
-
-/* .99 Opacity avoids a nasty effect on Webkit */
 
 a img,
 .aimginv:hover,
