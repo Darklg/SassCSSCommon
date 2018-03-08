@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.9
+Version: 0.10
 License: MIT
 */
 
@@ -465,4 +465,41 @@ $mobile-padding-neg: -15px !default;
     width: 100vw;
     margin-right: -50vw;
     margin-left: -50vw;
+}
+
+/* ----------------------------------------------------------
+  Columns
+---------------------------------------------------------- */
+
+%cssc-responsive-columns {
+    & {
+        -webkit-column-count: 3;
+        -moz-column-count: 3;
+        column-count: 3;
+        -webkit-column-gap: $mobile-padding;
+        -moz-column-gap: $mobile-padding;
+        column-gap: $mobile-padding;
+    }
+
+    & > * {
+        page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid;
+    }
+}
+
+@media($desktop_excluded) {
+    %cssc-responsive-columns {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media($mobile_only) {
+    %cssc-responsive-columns {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+    }
 }
