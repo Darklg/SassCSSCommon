@@ -34,31 +34,36 @@
     transform-origin: center center;
 }
 
-/* Conf
+/* Theme
 -------------------------- */
 
 .nav-toggle {
-    width: 6em;
-    height: 5em;
-}
+    & {
+        width: 6em;
+        height: 5em;
+        color: #000;
+        -webkit-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
 
-.nav-toggle span,
-.nav-toggle span:before,
-.nav-toggle span:after {
-    width: 6em;
-    height: 1em;
-    border-radius: 1px;
-    background-color: #000;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
+    span,
+    span:before,
+    span:after {
+        width: 6em;
+        height: 1em;
+        border-radius: 1px;
+        background-color: currentColor;
+        -webkit-transition: -webkit-transform 0.3s ease;
+        transition: transform 0.3s ease;
+    }
 
-.nav-toggle span:before {
-    margin-top: -2em;
-}
+    span:before {
+        margin-top: -2em;
+    }
 
-.nav-toggle span:after {
-    margin-top: 2em;
+    span:after {
+        margin-top: 2em;
+    }
 }
 
 /* Active
