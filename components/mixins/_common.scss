@@ -3,9 +3,16 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.10.1
+Version: 0.11.0
 License: MIT
 */
+
+$desktop-padding: 45px !default;
+$desktop-padding-neg: -45px !default;
+$tablet-padding: 30px !default;
+$tablet-padding-neg: -30px !default;
+$mobile-padding: 15px !default;
+$mobile-padding-neg: -15px !default;
 
 /* ----------------------------------------------------------
   Black & White
@@ -69,14 +76,34 @@ License: MIT
 ---------------------------------------------------------- */
 
 .desktop-grid-table {
-    display: table;
-    width: 100%;
-    table-layout: fixed;
+    & {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    & > * {
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    & > *:not(:last-child) {
+        padding-right: $desktop-padding/2;
+    }
+
+    & > * + * {
+        padding-left: $desktop-padding/2;
+    }
 }
 
-.desktop-grid-table > * {
-    display: table-cell;
-    vertical-align: top;
+@media($desktop_excluded) {
+    .desktop-grid-table > *:not(:last-child) {
+        padding-right: $tablet-padding/2;
+    }
+
+    .desktop-grid-table > * + * {
+        padding-left: $tablet-padding/2;
+    }
 }
 
 @media($mobile_only) {
@@ -85,8 +112,11 @@ License: MIT
         display: block;
     }
 
-    .desktop-grid-table > * {
+    .desktop-grid-table > * + *,
+    .desktop-grid-table > *:not(:last-child) {
         margin-bottom: 2em;
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
@@ -229,13 +259,6 @@ $browserPrefix: '';
 /* ----------------------------------------------------------
   Responsive padding
 ---------------------------------------------------------- */
-
-$desktop-padding: 45px !default;
-$desktop-padding-neg: -45px !default;
-$tablet-padding: 30px !default;
-$tablet-padding-neg: -30px !default;
-$mobile-padding: 15px !default;
-$mobile-padding-neg: -15px !default;
 
 /* All
 -------------------------- */
