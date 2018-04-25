@@ -1,49 +1,46 @@
 @charset "UTF-8";
 
 $content_width_wide: 940px!default;
+$desktop-padding: 45px !default;
+$desktop-padding-neg: -45px !default;
+$tablet-padding: 30px !default;
+$tablet-padding-neg: -30px !default;
+$mobile-padding: 15px !default;
+$mobile-padding-neg: -15px !default;
 
 /* ----------------------------------------------------------
   Containers
 ---------------------------------------------------------- */
 
-/* Dimensions
--------------------------- */
-
-.centered-container {
-    padding: 0 10px;
-    min-width: 960px;
-}
-
-.centered-container > * {
-    max-width: 940px;
-}
-
-/* Core
--------------------------- */
-
 /* Container centré */
 
+%responsive-centered-container,
 .centered-container {
+    @extend %responsive-padding-lr!optional;
     z-index: 1;
     clear: both;
     position: relative;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
     text-align: center;
-}
-
-.cssc-is-responsive .centered-container {
-    min-width: 0;
 }
 
 /* Contenu flottant */
 
+%responsive-centered-container-child,
 .centered-container > * {
-    margin: 0 auto;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: $content_width_wide;
     text-align: left;
 }
 
-.cssc-is-responsive .centered-container > * {
-    width: auto;
-}
+/* Items
+-------------------------- */
 
 .centered-container .cc-full {
     width: auto;
@@ -79,20 +76,3 @@ $content_width_wide: 940px!default;
     position: relative;
 }
 
-/* Responsive centered
--------------------------- */
-
-%responsive-centered-container {
-    @extend %responsive-padding-lr!optional;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-%responsive-centered-container-child {
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: $content_width_wide;
-}
