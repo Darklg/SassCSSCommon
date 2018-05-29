@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.2
+Version: 2.9.3
 License: MIT
 */
 
@@ -334,8 +334,7 @@ small {
 
 abbr[title],
 acronym[title] {
-    border-color: rgba(0,0,0,.2);
-    border-bottom: 1px dashed #ccc;
+    text-decoration: underline dotted;
     cursor: help;
 }
 
@@ -362,6 +361,7 @@ hr {
   Clearfix
 ---------------------------------------------------------- */
 
+%clearfix,
 .cssc-grid:before,
 .cssc-grid:after,
 .clearfix:after,
