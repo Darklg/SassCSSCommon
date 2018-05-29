@@ -17,6 +17,10 @@ $line-height-em: 1.3em !default;
     line-height: $line-height;
 }
 
+.cssc-content:after {
+    @extend %clearfix;
+}
+
 /* Text
 -------------------------- */
 
