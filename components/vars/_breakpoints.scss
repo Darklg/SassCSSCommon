@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+$tiny-max: 500px !default;
+$mobile-min: $tiny-max + 1px !default;
+$mobile-max: 767px !default;
+$tablet-min: $mobile-max + 1px !default;
+$tablet-mid: 895px !default;
+$tablet-midt: $tablet-mid + 1px !default;
+$tablet-max: 1023px !default;
+$desktop-min: $tablet-max + 1px !default;
+$desktop-mid: 1299px !default;
+$desktop-midt: $desktop-mid + 1px !default;
+$desktop-max: 1499px !default;
+$large-min: $desktop-max + 1px !default;
