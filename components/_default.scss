@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.3
+Version: 2.9.4
 License: MIT
 */
 
@@ -185,9 +185,12 @@ iframe,
 img,
 object,
 video {
-    height: auto;
     max-width: 100%;
     border: 0;
+}
+
+img {
+    height: auto;
 }
 
 /* Bugfix for Google Maps */
