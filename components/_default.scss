@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.4
+Version: 2.9.5
 License: MIT
 */
 
@@ -117,8 +117,6 @@ input[type="checkbox"] {
 textarea {
     resize: vertical;
 }
-
-
 
 input:focus {
     outline: 0;
@@ -415,6 +413,11 @@ a {
 
     &:active {
         color: #000;
+    }
+
+    &:focus:not(:hover) {
+        outline: 1px dotted rgba(#000, 0.3);
+        outline-offset: 2px;
     }
 }
 
