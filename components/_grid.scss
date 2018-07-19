@@ -3,7 +3,7 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 4.1
+Version: 4.2
 License: MIT
 */
 
@@ -32,11 +32,18 @@ License: MIT
   Grille fluide
 ---------------------------------------------------------- */
 
+$desktop-padding: 45px !default;
+$desktop-padding-neg: -45px !default;
+$tablet-padding: 30px !default;
+$tablet-padding-neg: -30px !default;
+$mobile-padding: 15px !default;
+$mobile-padding-neg: -15px !default;
+
 .fluid-grid {
     z-index: 1;
     position: relative;
     width: auto;
-    margin: 0 -10px;
+    margin: 0 $desktop-padding-neg/2;
     max-width: none;
 }
 
@@ -44,7 +51,7 @@ License: MIT
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 0 10px;
+    padding: 0 $desktop-padding/2;
 }
 
 /* Margin
@@ -56,7 +63,6 @@ License: MIT
 .fluid-grid--10 > * {padding: 0 10px}
 .fluid-grid--0 {margin: 0}
 .fluid-grid--0 > * {padding: 0}
-
 
 /* Columns
 -------------------------- */
@@ -81,6 +87,15 @@ License: MIT
 -------------------------- */
 
 @media(max-width:1023px) {
+
+    .fluid-grid {
+        margin: 0 $tablet-padding-neg/2;
+    }
+
+    .fluid-grid > * {
+        padding: 0 $tablet-padding/2;
+    }
+
     /* Margin */
     .tab--fluid-grid--20 {margin: 0 -20px}
     .tab--fluid-grid--20 > * {padding: 0 20px}
@@ -106,6 +121,15 @@ License: MIT
 }
 
 @media(max-width:767px) {
+
+    .fluid-grid {
+        margin: 0 $mobile-padding-neg/2;
+    }
+
+    .fluid-grid > * {
+        padding: 0 $mobile-padding/2;
+    }
+
     /* Margin */
     .tabv--fluid-grid--20 {margin: 0 -20px}
     .tabv--fluid-grid--20 > * {padding: 0 20px}
