@@ -7,10 +7,14 @@
 /* Utility
 -------------------------- */
 
-%wdrw-visible {
+@mixin wdrw-visible-mix() {
     visibility: visible;
     z-index: 999;
     opacity: 1;
+}
+
+%wdrw-visible {
+    @include wdrw-visible-mix();
 }
 
 /* Wrapper
@@ -72,10 +76,13 @@
         @extend %wdrw-visible;
     }
 
-    .submenu:hover,
-    .submenu:focus-within {
+    .submenu:hover {
         @extend %wdrw-visible;
     }
+}
+
+%cssc-drawer .submenu:focus-within {
+    @include wdrw-visible-mix();
 }
 
 /* Base class

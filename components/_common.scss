@@ -3,7 +3,7 @@
 /*
 Name: Common Objects
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.8.2
+Version: 2.8.3
 License: MIT
 */
 
@@ -11,6 +11,7 @@ License: MIT
   Automatic ellipsis "..." if content is more than one line
 ---------------------------------------------------------- */
 
+%cssc-oneline,
 .cssc-oneline {
     max-width: 100%;
     overflow: hidden;
