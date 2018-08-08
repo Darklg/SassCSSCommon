@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.11.1
+Version: 0.11.2
 License: MIT
 */
 
@@ -242,26 +242,23 @@ $browserPrefix: '';
   Same height children
 ---------------------------------------------------------- */
 
-.same-height-children {
-    display: block;
-    flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-}
+%same-height-children {
+    & {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+    }
 
-.same-height-children > * {
-    display: inline-block;
-}
-
-.same-height-children,
-.same-height-children > * {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
+    &,
+    & > * {
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
 }
 
 /* ----------------------------------------------------------
