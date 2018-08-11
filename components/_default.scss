@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.5
+Version: 2.9.6
 License: MIT
 */
 
@@ -442,7 +442,6 @@ a:hover img {
   Transitions
 ---------------------------------------------------------- */
 
-a,
 .trans-col {
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
@@ -463,14 +462,14 @@ a img,
     transition: all 0.3s ease;
 }
 
+a,
 input,
 button,
 textarea,
-.cssc-pagination a,
 .cssc-button,
 .trans-button {
-    -webkit-transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
-    transition: border 0.3s ease,background 0.3s ease,color 0.3s ease;
+    -webkit-transition: border-color 0.3s ease,background 0.3s ease,color 0.3s ease;
+    transition: border-color 0.3s ease,background 0.3s ease,color 0.3s ease;
 }
 
 /* ----------------------------------------------------------
@@ -482,4 +481,12 @@ textarea,
     * {
         transition: none !important;
     }
+}
+
+/* ----------------------------------------------------------
+  Avoid display of inline scripts
+---------------------------------------------------------- */
+
+script {
+    display: none!important;
 }
