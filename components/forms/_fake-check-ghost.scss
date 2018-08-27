@@ -17,6 +17,7 @@
         opacity: 0.01;
     }
 
+    & + .label,
     & + label {
         display: block;
         z-index: 1;
@@ -24,6 +25,7 @@
         padding-left: 2em;
     }
 
+    & + .label:before,
     & + label:before {
         content: '✓';
         z-index: 1;
@@ -41,6 +43,7 @@
         transition: all 0.3s ease;
     }
 
+    &:checked + .label:before,
     &:checked + label:before {
         color: inherit;
     }
@@ -50,6 +53,7 @@
 -------------------------- */
 
 %fake-radio-ghost {
+    & + .label:before,
     & + label:before {
         content: '•';
         border-radius: 999px;
