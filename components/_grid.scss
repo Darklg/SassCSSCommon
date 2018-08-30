@@ -3,7 +3,7 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 4.2
+Version: 4.3
 License: MIT
 */
 
@@ -38,6 +38,13 @@ $tablet-padding: 30px !default;
 $tablet-padding-neg: -30px !default;
 $mobile-padding: 15px !default;
 $mobile-padding-neg: -15px !default;
+
+$tiny-max: 500px !default;
+$tiny_only: "max-width:"+$tiny-max !default;
+$mobile-max: 767px !default;
+$mobile_only: "max-width:"+$mobile-max !default;
+$tablet-max: 1023px !default;
+$desktop_excluded: "max-width:"+$tablet-max !default;
 
 .fluid-grid {
     z-index: 1;
@@ -86,7 +93,7 @@ $mobile-padding-neg: -15px !default;
 /* Responsive
 -------------------------- */
 
-@media(max-width:1023px) {
+@media($desktop_excluded) {
 
     .fluid-grid {
         margin: 0 $tablet-padding-neg/2;
@@ -120,7 +127,7 @@ $mobile-padding-neg: -15px !default;
     .tab--col-100p {width: 100%}
 }
 
-@media(max-width:767px) {
+@media($mobile_only) {
 
     .fluid-grid {
         margin: 0 $mobile-padding-neg/2;
@@ -154,7 +161,7 @@ $mobile-padding-neg: -15px !default;
     .tabv--col-100p {width: 100%}
 }
 
-@media(max-width:500px) {
+@media($tiny_only) {
     /* Margin */
     .mob--fluid-grid--20 {margin: 0 -20px}
     .mob--fluid-grid--20 > * {padding: 0 20px}
