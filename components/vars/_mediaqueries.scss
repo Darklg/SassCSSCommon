@@ -8,6 +8,7 @@ $tiny_only: "max-width:"+$tiny-max !default;
 $tiny_excluded: "min-width:"+$mobile-min !default;
 $mobile_only: "max-width:"+$mobile-max !default;
 $mobile_excluded: "min-width:"+$tablet-min !default;
+$tabletmid_excluded: "min-width:"+$tablet-midt !default;
 $desktop_excluded: "max-width:"+$tablet-max !default;
 $desktop_only: "min-width:"+$desktop-min !default;
 $desktopmid_excluded:"max-width:"+$desktop-mid !default;
@@ -28,5 +29,51 @@ $large_only: "min-width:"+$large-min !default;
 @mixin media_desktop_and_mobile() {
     @media($desktop_only), ($mobile_only) and ($tiny_excluded) {
         @content;
+    }
+}
+
+/* ----------------------------------------------------------
+  Responsive selector type
+---------------------------------------------------------- */
+
+%responsive-selector-type:after {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0.001;
+}
+
+@media($desktop_only) {
+    %responsive-selector-type:after {
+        content: 'desktop';
+    }
+}
+
+@media($large_only) {
+    %responsive-selector-type:after {
+        content: 'large';
+    }
+}
+
+@media($desktop_excluded) {
+    %responsive-selector-type:after {
+        content: 'tablet';
+    }
+}
+
+@media($mobile_only) {
+    %responsive-selector-type:after {
+        content: 'mobile';
+    }
+}
+
+@media($tiny_only) {
+    %responsive-selector-type:after {
+        content: 'tiny';
     }
 }
