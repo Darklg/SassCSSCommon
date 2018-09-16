@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.6
+Version: 2.9.7
 License: MIT
 */
 
@@ -489,4 +489,18 @@ textarea,
 
 script {
     display: none!important;
+}
+
+/* ----------------------------------------------------------
+  Fix double em/strong
+---------------------------------------------------------- */
+
+i i,
+em em {
+    font-style: normal;
+}
+
+b b,
+strong strong {
+    font-weight: normal;
 }
