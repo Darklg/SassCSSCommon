@@ -5,37 +5,49 @@
 ---------------------------------------------------------- */
 
 .nav-toggle {
-    display: inline-block;
-    z-index: 1;
-    position: relative;
-    font-size: 5px;
-    vertical-align: middle;
-}
+    & {
+        display: inline-block;
+        z-index: 1;
+        position: relative;
+        font-size: 5px;
+        vertical-align: middle;
+    }
 
-.nav-toggle span {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-}
+    span,
+    span:before,
+    span:after {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
 
-.nav-toggle span:before,
-.nav-toggle span:after {
-    content: '';
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-transform-origin: center center;
-    -moz-transform-origin: center center;
-    transform-origin: center center;
+    span {
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    span:before,
+    span:after {
+        content: '';
+        -webkit-transform-origin: center center;
+        -moz-transform-origin: center center;
+        transform-origin: center center;
+    }
 }
 
 /* Theme
 -------------------------- */
+
+%csscommon-navtoggle-bar {
+    width: 6em;
+    height: 1em;
+    border-radius: 1px;
+    background-color: currentColor;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+}
 
 .nav-toggle {
     & {
@@ -49,12 +61,7 @@
     span,
     span:before,
     span:after {
-        width: 6em;
-        height: 1em;
-        border-radius: 1px;
-        background-color: currentColor;
-        -webkit-transition: -webkit-transform 0.3s ease;
-        transition: transform 0.3s ease;
+        @extend %csscommon-navtoggle-bar;
     }
 
     span:before {
