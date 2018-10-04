@@ -17,6 +17,7 @@
         opacity: 0.01;
     }
 
+    & ~ .label-main,
     & + .label,
     & + label {
         display: block;
@@ -24,7 +25,7 @@
         position: relative;
         padding-left: 2em;
     }
-
+    & ~ .label-main:before,
     & + .label:before,
     & + label:before {
         content: '✓';
@@ -43,6 +44,7 @@
         transition: all 0.3s ease;
     }
 
+    &:checked ~ .label-main:before,
     &:checked + .label:before,
     &:checked + label:before {
         color: inherit;
@@ -53,6 +55,7 @@
 -------------------------- */
 
 %fake-radio-ghost {
+    & ~ .label-main:before,
     & + .label:before,
     & + label:before {
         content: '•';
