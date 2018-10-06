@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.7
+Version: 2.9.8
 License: MIT
 */
 
@@ -302,10 +302,12 @@ mark {
     background-color: #FF9;
 }
 
+i,
 em {
     font-style: italic;
 }
 
+b,
 strong {
     font-weight: bold;
 }
@@ -418,6 +420,10 @@ a {
     &:focus:not(:hover) {
         outline: 1px dotted rgba(#000, 0.3);
         outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+        outline: none;
     }
 }
 
