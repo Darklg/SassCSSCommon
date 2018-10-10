@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.14.2
+Version: 0.15.0
 License: MIT
 */
 
@@ -612,20 +612,59 @@ $browserPrefix: '';
 }
 
 /* ----------------------------------------------------------
-  Parent hover visibility
+  Visibility switch
 ---------------------------------------------------------- */
+
+%csscommon-visibility-hidden {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease,visibility 0.3s ease;
+    transition: opacity 0.3s ease,visibility 0.3s ease;
+    pointer-events: none;
+}
+
+%csscommon-visibility-visible {
+    visibility: visible;
+    opacity: 0.999;
+    pointer-events: auto;
+}
+
+/* Parent hover
+-------------------------- */
 
 %parent-hover-visibility {
     & {
-        visibility: hidden;
-        opacity: 0;
-        -webkit-transition: all 0.3s ease;
-        transition: all 0.3s ease;
+        @extend %csscommon-visibility-hidden;
     }
 
     *:hover > & {
-        visibility: visible;
-        opacity: 0.99;
+        @extend %csscommon-visibility-visible;
+    }
+}
+
+/* Class visibility
+-------------------------- */
+
+%class-visibility {
+    & {
+        @extend %csscommon-visibility-hidden;
+    }
+
+    &.is-visible {
+        @extend %csscommon-visibility-visible;
+    }
+}
+
+/* Attribute visibility
+-------------------------- */
+
+%attribute-visibility {
+    & {
+        @extend %csscommon-visibility-hidden;
+    }
+
+    &[data-is-visible="1"] {
+        @extend %csscommon-visibility-visible;
     }
 }
 
