@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.15.0
+Version: 0.15.1
 License: MIT
 */
 
@@ -383,6 +383,10 @@ $browserPrefix: '';
     margin-bottom: $desktop-padding-neg;
 }
 
+%responsive-margin-top {
+    margin-top: $desktop-padding;
+}
+
 %responsive-margin-bottom {
     margin-bottom: $desktop-padding;
 }
@@ -427,6 +431,10 @@ $browserPrefix: '';
     %responsive-padding-tb-inv {
         margin-top: $tablet-padding-neg;
         margin-bottom: $tablet-padding-neg;
+    }
+
+    %responsive-margin-top {
+        margin-top: $tablet-padding;
     }
 
     %responsive-margin-bottom {
@@ -474,6 +482,10 @@ $browserPrefix: '';
     %responsive-padding-tb-inv {
         margin-top: $mobile-padding-neg;
         margin-bottom: $mobile-padding-neg;
+    }
+
+    %responsive-margin-top {
+        margin-top: $mobile-padding;
     }
 
     %responsive-margin-bottom {
