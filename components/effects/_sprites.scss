@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Sprite Animation
+---------------------------------------------------------- */
+
+@mixin spriteanimator($itemselector, $animname, $frameheight, $framewidth, $multiplicator, $animstepsnb) {
+    $calc: #{$frameheight * $animstepsnb * $multiplicator * -1};
+
+    @keyframes #{$animname} {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: 0 $calc;
+        }
+    }
+
+    #{$itemselector} {
+        display: inline-block;
+        width: $framewidth;
+        height: 0;
+        margin: auto;
+        padding-top: $frameheight;
+        overflow: hidden;
+        vertical-align: top;
+        background: transparent no-repeat 0 0;
+        background-size: 100% auto;
+        animation-iteration-count: 1;
+        animation-direction: normal;
+        animation-timing-function: steps($animstepsnb,end);
+        animation-fill-mode: forwards;
+        animation-delay: 0s;
+        animation-play-state: running;
+    }
+}
+
