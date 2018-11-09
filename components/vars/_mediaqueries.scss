@@ -77,3 +77,13 @@ $large_only: "min-width:"+$large-min !default;
         content: 'tiny';
     }
 }
+
+/* ----------------------------------------------------------
+  Browser query
+---------------------------------------------------------- */
+
+@mixin media_browser_is_ie() {
+    @media all and (-ms-high-contrast:none) {
+        @content;
+    }
+}
