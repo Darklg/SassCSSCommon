@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+$mobile-max: 767px !default;
+$mobile_only: "max-width: "+$mobile-max !default;
 /* ----------------------------------------------------------
   Responsive Tables
 ---------------------------------------------------------- */
