@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.9.8
+Version: 2.9.9
 License: MIT
 */
 
@@ -128,11 +128,11 @@ input:-webkit-autofill {
 
 /* Number & Search resets */
 
-input[type=number],
-input[type=search] {
-    -webkit-appearance: textfield;
-    -moz-appearance: textfield;
-    appearance: textfield;
+input[type="number"],
+input[type="search"] {
+    -webkit-appearance: textfield!important;
+    -moz-appearance: textfield!important;
+    appearance: textfield!important;
 }
 
 input::-webkit-outer-spin-button,
