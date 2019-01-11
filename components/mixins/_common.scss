@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.15.5
+Version: 0.15.6
 License: MIT
 */
 
@@ -13,6 +13,7 @@ $tablet-padding: 30px !default;
 $tablet-padding-neg: -30px !default;
 $mobile-padding: 15px !default;
 $mobile-padding-neg: -15px !default;
+$font-size: 13px !default;
 
 /* ----------------------------------------------------------
   Black & White
@@ -821,5 +822,20 @@ $browserPrefix: '';
         -webkit-transform: translate3d(0,-50%,0);
         transform: translate3d(0,-50%,0);
         -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* ----------------------------------------------------------
+  Link with hidden text and icon
+---------------------------------------------------------- */
+
+%link-icon-notext {
+    & {
+        font-size: 0;
+    }
+
+    &:before {
+        @extend .icon;
+        font-size: $font-size*1.6;
     }
 }
