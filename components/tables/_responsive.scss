@@ -41,4 +41,8 @@ $mobile_only: "max-width: "+$mobile-max !default;
         display: block;
         font-weight: bold;
     }
+
+    %responsive-table td[data-rwd-label]:before {
+        content: attr(data-rwd-label);
+    }
 }
