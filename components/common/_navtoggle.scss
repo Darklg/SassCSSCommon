@@ -4,6 +4,31 @@
   Nav toggle
 ---------------------------------------------------------- */
 
+/* Selectors
+-------------------------- */
+
+/* Bars */
+
+.nav-toggle span {
+    &,
+    &:before,
+    &:after {
+        @extend %csscommon-navtoggle-bar;
+    }
+}
+
+/* Active */
+
+[data-bodypanel="has--opened-main-menu"],
+.has--opened-main-menu {
+    .nav-toggle {
+        @extend %csscommon-navtoggle-bar-active;
+    }
+}
+
+/* Core
+-------------------------- */
+
 .nav-toggle {
     & {
         display: inline-block;
@@ -11,15 +36,6 @@
         position: relative;
         font-size: 5px;
         vertical-align: middle;
-    }
-
-    span,
-    span:before,
-    span:after {
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
     }
 
     span {
@@ -37,17 +53,15 @@
     }
 }
 
+%csscommon-navtoggle-bar {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 /* Theme
 -------------------------- */
-
-%csscommon-navtoggle-bar {
-    width: 6em;
-    height: 1em;
-    border-radius: 1px;
-    background-color: currentColor;
-    -webkit-transition: -webkit-transform 0.3s ease;
-    transition: transform 0.3s ease;
-}
 
 .nav-toggle {
     & {
@@ -56,12 +70,6 @@
         color: #000;
         -webkit-transition: all 0.3s ease;
         transition: all 0.3s ease;
-    }
-
-    span,
-    span:before,
-    span:after {
-        @extend %csscommon-navtoggle-bar;
     }
 
     span:before {
@@ -73,11 +81,19 @@
     }
 }
 
+%csscommon-navtoggle-bar {
+    width: 6em;
+    height: 1em;
+    border-radius: 1px;
+    background-color: currentColor;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
 /* Active
 -------------------------- */
 
-[data-bodypanel="has--opened-main-menu"] .nav-toggle span,
-.has--opened-main-menu .nav-toggle span {
+%csscommon-navtoggle-bar-active span {
     & {
         height: 1px;
         background: transparent;
