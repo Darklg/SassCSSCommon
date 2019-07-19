@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.5.7
+Version: 2.5.8
 License: MIT
 */
 
@@ -167,12 +167,16 @@ button {
     box-sizing: border-box;
     width: 100%;
     border: none;
+    border-radius: 0;
     overflow: hidden;
     text-align: left;
     text-indent: 0.01px;
     text-overflow: ellipsis;
+    font: inherit;
     line-height: 1;
     white-space: nowrap;
+    color: inherit;
+    background: transparent;
     cursor: pointer;
     -ms-appearance: none;
 }
