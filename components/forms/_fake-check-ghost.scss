@@ -9,7 +9,7 @@
 
 %fake-radio-ghost,
 %fake-check-ghost {
-    & {
+    &:not(:last-child) {
         z-index: 1;
         position: absolute;
         top: auto;
@@ -25,6 +25,7 @@
         position: relative;
         padding-left: 2em;
     }
+
     & ~ .label-main:before,
     & + .label:before,
     & + label:before {
