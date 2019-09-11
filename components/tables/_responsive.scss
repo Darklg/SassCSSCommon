@@ -2,6 +2,7 @@
 
 $mobile-max: 767px !default;
 $mobile_only: "max-width: "+$mobile-max !default;
+
 /* ----------------------------------------------------------
   Responsive Tables
 ---------------------------------------------------------- */
@@ -44,5 +45,21 @@ $mobile_only: "max-width: "+$mobile-max !default;
 
     %responsive-table td[data-rwd-label]:before {
         content: attr(data-rwd-label);
+    }
+}
+
+/* ----------------------------------------------------------
+  Mobile table content
+---------------------------------------------------------- */
+
+@media($mobile_only) {
+    %responsive-table-simple td,
+    %responsive-table-simple tr,
+    %responsive-table-simple thead,
+    %responsive-table-simple th,
+    %responsive-table-simple tbody,
+    %responsive-table-simple {
+        display: block;
+        border: 0;
     }
 }
