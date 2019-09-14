@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.17.0
+Version: 0.17.1
 License: MIT
 */
 
@@ -41,6 +41,7 @@ $gutter_width: 30px !default;
     }
 
     /* Build common values */
+    background: transparent no-repeat 0 0;
     background-image: -webkit-linear-gradient($args_list);
     background-image: -moz-linear-gradient($args_list);
     background-image: linear-gradient($args_list);
@@ -673,7 +674,7 @@ $browserPrefix: '';
   Visibility switch
 ---------------------------------------------------------- */
 
-%csscommon-visibility-hidden {
+@mixin csscommon_visibility_hidden() {
     visibility: hidden;
     opacity: 0;
     -webkit-transition: opacity 0.3s ease,visibility 0.3s ease;
@@ -681,10 +682,18 @@ $browserPrefix: '';
     pointer-events: none;
 }
 
-%csscommon-visibility-visible {
+%csscommon-visibility-hidden {
+    @include csscommon_visibility_hidden();
+}
+
+@mixin csscommon_visibility_visible {
     visibility: visible;
     opacity: 0.999;
     pointer-events: auto;
+}
+
+%csscommon-visibility-visible {
+    @include csscommon_visibility_visible();
 }
 
 /* Parent hover
