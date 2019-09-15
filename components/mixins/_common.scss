@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.17.1
+Version: 0.17.2
 License: MIT
 */
 
@@ -16,6 +16,7 @@ $mobile-padding-neg: -15px !default;
 $font-size: 13px !default;
 $column_width: 90px !default;
 $gutter_width: 30px !default;
+$directions_rotate: top right bottom left;
 
 /* ----------------------------------------------------------
   Black & White
@@ -386,24 +387,57 @@ $browserPrefix: '';
     }
 }
 
-/* Top / Bottom
+/* Simple
 -------------------------- */
 
-%responsive-relative-top {
-    top: $desktop-padding;
+@each $direction in $directions_rotate {
+    %responsive-relative-#{$direction} {
+        #{$direction}: $desktop-padding;
+    }
+
+    %responsive-relative-#{$direction}-inv {
+        #{$direction}: $desktop-padding-neg;
+    }
+
+    %responsive-margin-#{$direction} {
+        margin-#{$direction}: $desktop-padding;
+    }
 }
 
-%responsive-relative-bottom {
-    bottom: $desktop-padding;
+@media($desktop_excluded) {
+    @each $direction in $directions_rotate {
+        %responsive-relative-#{$direction} {
+            #{$direction}: $tablet-padding;
+        }
+
+        %responsive-relative-#{$direction}-inv {
+            #{$direction}: $tablet-padding-neg;
+        }
+
+        %responsive-margin-#{$direction} {
+            margin-#{$direction}: $tablet-padding;
+        }
+    }
 }
 
-%responsive-relative-top-inv {
-    top: $desktop-padding-neg;
+@media($mobile_only) {
+    @each $direction in $directions_rotate {
+        %responsive-relative-#{$direction} {
+            #{$direction}: $mobile-padding;
+        }
+
+        %responsive-relative-#{$direction}-inv {
+            #{$direction}: $mobile-padding-neg;
+        }
+
+        %responsive-margin-#{$direction} {
+            margin-#{$direction}: $mobile-padding;
+        }
+    }
 }
 
-%responsive-relative-bottom-inv {
-    bottom: $desktop-padding-neg;
-}
+/* Top / Bottom
+-------------------------- */
 
 %responsive-padding-tb {
     padding-top: $desktop-padding;
@@ -430,31 +464,7 @@ $browserPrefix: '';
     margin-bottom: $desktop-padding-neg;
 }
 
-%responsive-margin-top {
-    margin-top: $desktop-padding;
-}
-
-%responsive-margin-bottom {
-    margin-bottom: $desktop-padding;
-}
-
 @media($desktop_excluded) {
-    %responsive-relative-top {
-        top: $tablet-padding;
-    }
-
-    %responsive-relative-bottom {
-        bottom: $tablet-padding;
-    }
-
-    %responsive-relative-top-inv {
-        top: $tablet-padding-neg;
-    }
-
-    %responsive-relative-bottom-inv {
-        bottom: $tablet-padding-neg;
-    }
-
     %responsive-padding-tb {
         padding-top: $tablet-padding;
         padding-bottom: $tablet-padding;
@@ -479,33 +489,9 @@ $browserPrefix: '';
         margin-top: $tablet-padding-neg;
         margin-bottom: $tablet-padding-neg;
     }
-
-    %responsive-margin-top {
-        margin-top: $tablet-padding;
-    }
-
-    %responsive-margin-bottom {
-        margin-bottom: $tablet-padding;
-    }
 }
 
 @media($mobile_only) {
-    %responsive-relative-top {
-        top: $mobile-padding;
-    }
-
-    %responsive-relative-bottom {
-        bottom: $mobile-padding;
-    }
-
-    %responsive-relative-top-inv {
-        top: $mobile-padding-neg;
-    }
-
-    %responsive-relative-bottom-inv {
-        bottom: $mobile-padding-neg;
-    }
-
     %responsive-padding-tb {
         padding-top: $mobile-padding;
         padding-bottom: $mobile-padding;
@@ -530,34 +516,10 @@ $browserPrefix: '';
         margin-top: $mobile-padding-neg;
         margin-bottom: $mobile-padding-neg;
     }
-
-    %responsive-margin-top {
-        margin-top: $mobile-padding;
-    }
-
-    %responsive-margin-bottom {
-        margin-bottom: $mobile-padding;
-    }
 }
 
 /* Left / Right
 -------------------------- */
-
-%responsive-relative-left {
-    left: $desktop-padding;
-}
-
-%responsive-relative-right {
-    right: $desktop-padding;
-}
-
-%responsive-relative-left-inv {
-    left: $desktop-padding-neg;
-}
-
-%responsive-relative-right-inv {
-    right: $desktop-padding-neg;
-}
 
 %responsive-padding-lr {
     padding-right: $desktop-padding;
@@ -585,22 +547,6 @@ $browserPrefix: '';
 }
 
 @media($desktop_excluded) {
-    %responsive-relative-left {
-        left: $tablet-padding;
-    }
-
-    %responsive-relative-right {
-        right: $tablet-padding;
-    }
-
-    %responsive-relative-left-inv {
-        left: $tablet-padding-neg;
-    }
-
-    %responsive-relative-right-inv {
-        right: $tablet-padding-neg;
-    }
-
     %responsive-padding-lr {
         padding-right: $tablet-padding;
         padding-left: $tablet-padding;
@@ -628,22 +574,6 @@ $browserPrefix: '';
 }
 
 @media($mobile_only) {
-    %responsive-relative-left {
-        left: $mobile-padding;
-    }
-
-    %responsive-relative-right {
-        right: $mobile-padding;
-    }
-
-    %responsive-relative-left-inv {
-        left: $mobile-padding-neg;
-    }
-
-    %responsive-relative-right-inv {
-        right: $mobile-padding-neg;
-    }
-
     %responsive-padding-lr {
         padding-right: $mobile-padding;
         padding-left: $mobile-padding;
