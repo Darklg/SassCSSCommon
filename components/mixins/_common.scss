@@ -239,7 +239,7 @@ $browserPrefix: '';
  *
  * Ex :
  *
- * @include keyframes(rotating) {
+ * @include csscKeyframes(rotating) {
  *    0%, 100% {
  *        #{$browserPrefix}transform: rotate(0deg);
  *    }
