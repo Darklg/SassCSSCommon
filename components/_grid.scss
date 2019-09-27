@@ -3,7 +3,7 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 4.3
+Version: 5.0.0
 License: MIT
 */
 
@@ -47,26 +47,30 @@ $tablet-max: 1023px !default;
 $desktop_excluded: "max-width:"+$tablet-max !default;
 
 .fluid-grid {
-    z-index: 1;
-    position: relative;
-    width: auto;
-    margin: 0 $desktop-padding-neg/2;
-    max-width: none;
-}
+    & {
+        z-index: 1;
+        position: relative;
+        width: auto;
+        margin: 0 $desktop-padding-neg/2;
+        max-width: none;
+    }
 
-.fluid-grid > * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 0 $desktop-padding/2;
+    & > * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 0 $desktop-padding/2;
+        margin-bottom: $desktop-padding;
+    }
+
 }
 
 /* Margin
 -------------------------- */
 
-.fluid-grid--20 {margin: 0 -20px}
+.fluid-grid--20 {margin: 0 -20px 20px}
 .fluid-grid--20 > * {padding: 0 20px}
-.fluid-grid--10 {margin: 0 -10px}
+.fluid-grid--10 {margin: 0 -10px 10px}
 .fluid-grid--10 > * {padding: 0 10px}
 .fluid-grid--0 {margin: 0}
 .fluid-grid--0 > * {padding: 0}
@@ -74,7 +78,9 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
 /* Columns
 -------------------------- */
 
+.col-8p {width: 8.33%}
 .col-10p {width: 10%}
+.col-16p {width: 16.66%}
 .col-20p {width: 20%}
 .col-25p {width: 25%}
 .col-30p {width: 30%}
@@ -101,6 +107,7 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
 
     .fluid-grid > * {
         padding: 0 $tablet-padding/2;
+        margin-bottom: $tablet-padding;
     }
 
     /* Margin */
@@ -110,7 +117,9 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
     .tab--fluid-grid--10 > * {padding: 0 10px}
 
     /* Columns */
+    .tab--col-8p {width: 8.33%}
     .tab--col-10p {width: 10%}
+    .tab--col-16p {width: 16.66%}
     .tab--col-20p {width: 20%}
     .tab--col-25p {width: 25%}
     .tab--col-30p {width: 30%}
@@ -135,6 +144,7 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
 
     .fluid-grid > * {
         padding: 0 $mobile-padding/2;
+        margin-bottom: $mobile-padding;
     }
 
     /* Margin */
@@ -144,7 +154,9 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
     .tabv--fluid-grid--10 > * {padding: 0 10px}
 
     /* Columns */
+    .tabv--col-8p {width: 8.33%}
     .tabv--col-10p {width: 10%}
+    .tabv--col-16p {width: 16.66%}
     .tabv--col-20p {width: 20%}
     .tabv--col-25p {width: 25%}
     .tabv--col-30p {width: 30%}
@@ -169,7 +181,9 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
     .mob--fluid-grid--10 > * {padding: 0 10px}
 
     /* Columns */
+    .mob--col-8p {width: 8.33%}
     .mob--col-10p {width: 10%}
+    .mob--col-16p {width: 16.66%}
     .mob--col-20p {width: 20%}
     .mob--col-25p {width: 25%}
     .mob--col-30p {width: 30%}
