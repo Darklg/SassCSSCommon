@@ -4,6 +4,9 @@
   Classic media queries
 ---------------------------------------------------------- */
 
+/* Width
+-------------------------- */
+
 $tiny_only: "max-width:"+$tiny-max !default;
 $tiny_excluded: "min-width:"+$mobile-min !default;
 $mobile_only: "max-width:"+$mobile-max !default;
@@ -15,6 +18,12 @@ $desktopmid_excluded:"max-width:"+$desktop-mid !default;
 $desktopmid_only:"min-width:"+$desktop-midt !default;
 $large_excluded: "max-width:"+$desktop-max !default;
 $large_only: "min-width:"+$large-min !default;
+
+/* Height
+-------------------------- */
+
+$small_height_only: "max-height:"+$screen-small-height !default;
+$small_height_excluded: "min-height:"+$screen-big-height !default;
 
 /* ----------------------------------------------------------
   Custom media queries
@@ -28,6 +37,12 @@ $large_only: "min-width:"+$large-min !default;
 
 @mixin media_desktop_and_mobile() {
     @media($desktop_only), ($mobile_only) and ($tiny_excluded) {
+        @content;
+    }
+}
+
+@mixin media_desktop_small_screens() {
+    @media($small_height_only) and ($desktop_only) {
         @content;
     }
 }

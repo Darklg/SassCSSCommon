@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+/* ----------------------------------------------------------
+  Screen width
+---------------------------------------------------------- */
+
 $tiny-max: 500px !default;
 $mobile-min: $tiny-max + 1px !default;
 $mobile-max: 767px !default;
@@ -12,3 +16,10 @@ $desktop-mid: 1299px !default;
 $desktop-midt: $desktop-mid + 1px !default;
 $desktop-max: 1499px !default;
 $large-min: $desktop-max + 1px !default;
+
+/* ----------------------------------------------------------
+  Screen height
+---------------------------------------------------------- */
+
+$screen-small-height: 750px !default;
+$screen-big-height: $screen-small-height+1px !default;
