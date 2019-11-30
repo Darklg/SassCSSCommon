@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.17.5
+Version: 0.18.0
 License: MIT
 */
 
@@ -28,6 +28,24 @@ $directions_rotate: top right bottom left;
 
 @function white($opacity){
     @return rgba(255,255,255,$opacity);
+}
+
+/* ----------------------------------------------------------
+  Property delay
+---------------------------------------------------------- */
+
+// @include cssc_property_delay(li, transition-delay, 0.2s, 3);
+// will produce :
+// li:nth-child(1) { transition-delay: 0.2s; }
+// li:nth-child(2) { transition-delay: 0.4s; }
+// li:nth-child(3) { transition-delay: 0.6s; }
+
+@mixin cssc_property_delay($selector, $property, $duration:0.3s, $max:10) {
+    @for $i from 1 through $max {
+        #{$selector}:nth-child(#{$i}){
+            #{$property}: $i * $duration;
+        }
+    }
 }
 
 /* ----------------------------------------------------------
