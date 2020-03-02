@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.18.1
+Version: 0.18.2
 License: MIT
 */
 
@@ -216,6 +216,22 @@ $directions_rotate: top right bottom left;
     left: 50%;
     -webkit-transform: translate3d(-50%,-50%,0);
     transform: translate3d(-50%,-50%,0);
+}
+
+%absolute-center-top {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+%absolute-center-left {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 /* ----------------------------------------------------------
