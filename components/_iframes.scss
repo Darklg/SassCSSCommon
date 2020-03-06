@@ -3,7 +3,7 @@
 /*
 Name: Iframes
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.3
+Version: 0.4.0
 License: MIT
 */
 
@@ -29,6 +29,7 @@ License: MIT
     position: relative;
     height: 0;
     padding-top: 56.25%;
+    background-color: #000;
 }
 
 /* ----------------------------------------------------------
@@ -43,6 +44,42 @@ License: MIT
     width: 100%;
     height: 100%;
     margin: auto;
+}
+
+/* Cover
+-------------------------- */
+
+.content-video__cover {
+    &,
+    i[class*="icon"] {
+        z-index: 2;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        opacity: 0.999;
+        -webkit-transition: color 0.5s ease, opacity 0.5s ease;
+        transition: color 0.5s ease, opacity 0.5s ease;
+        cursor: pointer;
+    }
+
+    & {
+        background: transparent no-repeat center center;
+        background-size: cover;
+    }
+
+    i[class*="icon"] {
+        width: 1em;
+        height: 1em;
+    }
+
+    [data-is-loading="1"] & i[class*="icon"],
+    [data-is-playing="1"] & {
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 /* ----------------------------------------------------------
