@@ -3,9 +3,34 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 5.0.0
+Version: 6.0.0
 License: MIT
 */
+
+$csscommon_grid_dimensions: (
+    "8p": 8.33%,
+    "10p": 10%,
+    "16p": 16.66%,
+    "20p": 20%,
+    "25p": 25%,
+    "30p": 30%,
+    "33p": 33.333%,
+    "40p": 40%,
+    "45p": 45%,
+    "50p": 50%,
+    "55p": 55%,
+    "60p": 60%,
+    "66p": 66.667%,
+    "70p": 70%,
+    "75p": 75%,
+    "80p": 80%,
+    "90p": 90%,
+    "100p": 100%
+);
+
+/* ----------------------------------------------------------
+  Core
+---------------------------------------------------------- */
 
 .cssc-grid {
     display: block;
@@ -68,39 +93,22 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
 /* Margin
 -------------------------- */
 
-.fluid-grid--20 {margin: 0 -20px 20px}
-.fluid-grid--20 > * {padding: 0 20px}
-.fluid-grid--10 {margin: 0 -10px 10px}
-.fluid-grid--10 > * {padding: 0 10px}
 .fluid-grid--0 {margin: 0}
 .fluid-grid--0 > * {padding: 0}
 
 /* Columns
 -------------------------- */
 
-.col-8p {width: 8.33%}
-.col-10p {width: 10%}
-.col-16p {width: 16.66%}
-.col-20p {width: 20%}
-.col-25p {width: 25%}
-.col-30p {width: 30%}
-.col-33p {width: 33.333%}
-.col-40p {width: 40%}
-.col-45p {width: 45%}
-.col-50p {width: 50%}
-.col-55p {width: 55%}
-.col-60p {width: 60%}
-.col-66p {width: 66.667%}
-.col-75p {width: 75%}
-.col-80p {width: 80%}
-.col-90p {width: 90%}
-.col-100p {width: 100%}
+@each $col_name, $percent in $csscommon_grid_dimensions {
+    .col-#{$col_name} {
+        width: $percent;
+    }
+}
 
 /* Responsive
 -------------------------- */
 
 @media($desktop_excluded) {
-
     .fluid-grid {
         margin: 0 $tablet-padding-neg/2;
     }
@@ -117,27 +125,14 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
     .tab--fluid-grid--10 > * {padding: 0 10px}
 
     /* Columns */
-    .tab--col-8p {width: 8.33%}
-    .tab--col-10p {width: 10%}
-    .tab--col-16p {width: 16.66%}
-    .tab--col-20p {width: 20%}
-    .tab--col-25p {width: 25%}
-    .tab--col-30p {width: 30%}
-    .tab--col-33p {width: 33.333%}
-    .tab--col-40p {width: 40%}
-    .tab--col-45p {width: 45%}
-    .tab--col-50p {width: 50%}
-    .tab--col-55p {width: 55%}
-    .tab--col-60p {width: 60%}
-    .tab--col-66p {width: 66.667%}
-    .tab--col-75p {width: 75%}
-    .tab--col-80p {width: 80%}
-    .tab--col-90p {width: 90%}
-    .tab--col-100p {width: 100%}
+    @each $col_name, $percent in $csscommon_grid_dimensions {
+        .tab--col-#{$col_name} {
+            width: $percent;
+        }
+    }
 }
 
 @media($mobile_only) {
-
     .fluid-grid {
         margin: 0 $mobile-padding-neg/2;
     }
@@ -147,55 +142,20 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
         margin-bottom: $mobile-padding;
     }
 
-    /* Margin */
-    .tabv--fluid-grid--20 {margin: 0 -20px}
-    .tabv--fluid-grid--20 > * {padding: 0 20px}
-    .tabv--fluid-grid--10 {margin: 0 -10px}
-    .tabv--fluid-grid--10 > * {padding: 0 10px}
 
     /* Columns */
-    .tabv--col-8p {width: 8.33%}
-    .tabv--col-10p {width: 10%}
-    .tabv--col-16p {width: 16.66%}
-    .tabv--col-20p {width: 20%}
-    .tabv--col-25p {width: 25%}
-    .tabv--col-30p {width: 30%}
-    .tabv--col-33p {width: 33.333%}
-    .tabv--col-40p {width: 40%}
-    .tabv--col-45p {width: 45%}
-    .tabv--col-50p {width: 50%}
-    .tabv--col-55p {width: 55%}
-    .tabv--col-60p {width: 60%}
-    .tabv--col-66p {width: 66.667%}
-    .tabv--col-75p {width: 75%}
-    .tabv--col-80p {width: 80%}
-    .tabv--col-90p {width: 90%}
-    .tabv--col-100p {width: 100%}
+    @each $col_name, $percent in $csscommon_grid_dimensions {
+        .tabv--col-#{$col_name} {
+            width: $percent;
+        }
+    }
 }
 
 @media($tiny_only) {
-    /* Margin */
-    .mob--fluid-grid--20 {margin: 0 -20px}
-    .mob--fluid-grid--20 > * {padding: 0 20px}
-    .mob--fluid-grid--10 {margin: 0 -10px}
-    .mob--fluid-grid--10 > * {padding: 0 10px}
-
     /* Columns */
-    .mob--col-8p {width: 8.33%}
-    .mob--col-10p {width: 10%}
-    .mob--col-16p {width: 16.66%}
-    .mob--col-20p {width: 20%}
-    .mob--col-25p {width: 25%}
-    .mob--col-30p {width: 30%}
-    .mob--col-33p {width: 33.333%}
-    .mob--col-40p {width: 40%}
-    .mob--col-45p {width: 45%}
-    .mob--col-50p {width: 50%}
-    .mob--col-55p {width: 55%}
-    .mob--col-60p {width: 60%}
-    .mob--col-66p {width: 66.667%}
-    .mob--col-75p {width: 75%}
-    .mob--col-80p {width: 80%}
-    .mob--col-90p {width: 90%}
-    .mob--col-100p {width: 100%}
+    @each $col_name, $percent in $csscommon_grid_dimensions {
+        .mob--col-#{$col_name} {
+            width: $percent;
+        }
+    }
 }
