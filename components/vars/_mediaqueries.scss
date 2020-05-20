@@ -11,6 +11,7 @@ $tiny_only: "max-width:"+$tiny-max !default;
 $tiny_excluded: "min-width:"+$mobile-min !default;
 $mobile_only: "max-width:"+$mobile-max !default;
 $mobile_excluded: "min-width:"+$tablet-min !default;
+$tabletmid_only: "max-width:"+$tablet-mid !default;
 $tabletmid_excluded: "min-width:"+$tablet-midt !default;
 $desktop_excluded: "max-width:"+$tablet-max !default;
 $desktop_only: "min-width:"+$desktop-min !default;
