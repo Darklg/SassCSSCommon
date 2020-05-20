@@ -2,12 +2,13 @@
 
 $mobile-max: 767px !default;
 $mobile_only: "max-width: "+$mobile-max !default;
+$responsive_table_media_query: $mobile_only!default;
 
 /* ----------------------------------------------------------
   Responsive Tables
 ---------------------------------------------------------- */
 
-@media($mobile_only) {
+@media($responsive_table_media_query) {
     %responsive-table td,
     %responsive-table tr,
     %responsive-table tbody,
@@ -52,7 +53,7 @@ $mobile_only: "max-width: "+$mobile-max !default;
   Mobile table content
 ---------------------------------------------------------- */
 
-@media($mobile_only) {
+@media($responsive_table_media_query) {
     %responsive-table-simple td,
     %responsive-table-simple tr,
     %responsive-table-simple thead,
