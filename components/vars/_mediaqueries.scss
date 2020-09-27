@@ -26,6 +26,12 @@ $large_only: "min-width:"+$large-min !default;
 $small_height_only: "max-height:"+$screen-small-height !default;
 $small_height_excluded: "min-height:"+$screen-big-height !default;
 
+/* Features
+-------------------------- */
+
+$has_mobile_menu: $desktop_excluded;
+$has_desktop_menu: $desktop_only;
+
 /* ----------------------------------------------------------
   Custom media queries
 ---------------------------------------------------------- */
