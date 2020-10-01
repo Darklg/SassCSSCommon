@@ -2,7 +2,7 @@
 
 /*
 Name: Common Nav
-Version: 0.1.0
+Version: 0.1.1
 License: MIT
 */
 
@@ -100,6 +100,7 @@ $zindex-header: 10!default;
     .has--opened-main-menu %cssc-mobile-menu-down__wrapper {
         visibility: visible;
         opacity: 0.999;
+        pointer-events: initial;
     }
 
     %cssc-mobile-menu-down {
