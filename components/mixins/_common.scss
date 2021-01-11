@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.19.0
+Version: 0.20.0
 License: MIT
 */
 
@@ -197,6 +197,20 @@ $directions_rotate: top right bottom left;
 
 .desktop-grid-table {
     @extend %desktop-grid-table;
+}
+
+/* ----------------------------------------------------------
+  Cover image
+---------------------------------------------------------- */
+
+%cssc-cover-image {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* ----------------------------------------------------------
