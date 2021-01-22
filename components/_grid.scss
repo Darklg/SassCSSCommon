@@ -3,9 +3,28 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 6.0.0
+Version: 7.0.0
 License: MIT
 */
+
+/* ----------------------------------------------------------
+  Default values
+---------------------------------------------------------- */
+
+$desktop-padding: 45px !default;
+$tablet-padding: 30px !default;
+$mobile-padding: 15px !default;
+
+$tiny-max: 500px !default;
+$tiny_only: "max-width:"+$tiny-max !default;
+$mobile-max: 767px !default;
+$mobile_only: "max-width:"+$mobile-max !default;
+$tablet-max: 1023px !default;
+$desktop_excluded: "max-width:"+$tablet-max !default;
+
+/* ----------------------------------------------------------
+  Config
+---------------------------------------------------------- */
 
 $csscommon_grid_dimensions: (
     "8p": 8.33%,
@@ -26,75 +45,72 @@ $csscommon_grid_dimensions: (
     "80p": 80%,
     "90p": 90%,
     "100p": 100%
-);
+) !default;
+
+$desktop-grid-padding: $desktop-padding !default;
+$tablet-grid-padding: $tablet-padding !default;
+$mobile-grid-padding: $mobile-padding !default;
+$desktop-grid-padding-neg: 0-$desktop-grid-padding !default;
+$tablet-grid-padding-neg: 0-$tablet-grid-padding !default;
+$mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 
 /* ----------------------------------------------------------
   Core
 ---------------------------------------------------------- */
 
 .cssc-grid {
-    display: block;
-    clear: both;
-    max-width: 100%;
-}
+    & {
+        display: block;
+        clear: both;
+        max-width: 100%;
+    }
 
-.cssc-grid:before,
-.cssc-grid:after {
-    content: " ";
-    display: block;
-    visibility: hidden;
-    clear: both;
-    max-height: 0;
-    overflow: hidden;
-}
+    &:before,
+    &:after {
+        content: " ";
+        display: block;
+        visibility: hidden;
+        clear: both;
+        max-height: 0;
+        overflow: hidden;
+    }
 
-.cssc-grid > * {
-    float: left;
-    min-height: 1px;
+    & > * {
+        float: left;
+        min-height: 1px;
+    }
 }
 
 /* ----------------------------------------------------------
-  Grille fluide
+  Fluid grid
 ---------------------------------------------------------- */
-
-$desktop-padding: 45px !default;
-$desktop-padding-neg: -45px !default;
-$tablet-padding: 30px !default;
-$tablet-padding-neg: -30px !default;
-$mobile-padding: 15px !default;
-$mobile-padding-neg: -15px !default;
-
-$tiny-max: 500px !default;
-$tiny_only: "max-width:"+$tiny-max !default;
-$mobile-max: 767px !default;
-$mobile_only: "max-width:"+$mobile-max !default;
-$tablet-max: 1023px !default;
-$desktop_excluded: "max-width:"+$tablet-max !default;
 
 .fluid-grid {
     & {
         z-index: 1;
         position: relative;
         width: auto;
-        margin: 0 $desktop-padding-neg/2;
+        margin: 0 $desktop-grid-padding-neg/2;
         max-width: none;
     }
 
     & > * {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         box-sizing: border-box;
-        padding: 0 $desktop-padding/2;
-        margin-bottom: $desktop-padding;
+        padding: 0 $desktop-grid-padding/2;
+        margin-bottom: $desktop-grid-padding;
     }
-
 }
 
 /* Margin
 -------------------------- */
 
-.fluid-grid--0 {margin: 0}
-.fluid-grid--0 > * {padding: 0}
+.fluid-grid--0 {
+    margin: 0;
+}
+
+.fluid-grid--0 > * {
+    padding: 0;
+}
 
 /* Columns
 -------------------------- */
@@ -110,12 +126,12 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
 
 @media($desktop_excluded) {
     .fluid-grid {
-        margin: 0 $tablet-padding-neg/2;
+        margin: 0 $tablet-grid-padding-neg/2;
     }
 
     .fluid-grid > * {
-        padding: 0 $tablet-padding/2;
-        margin-bottom: $tablet-padding;
+        padding: 0 $tablet-grid-padding/2;
+        margin-bottom: $tablet-grid-padding;
     }
 
     /* Margin */
@@ -134,12 +150,12 @@ $desktop_excluded: "max-width:"+$tablet-max !default;
 
 @media($mobile_only) {
     .fluid-grid {
-        margin: 0 $mobile-padding-neg/2;
+        margin: 0 $mobile-grid-padding-neg/2;
     }
 
     .fluid-grid > * {
-        padding: 0 $mobile-padding/2;
-        margin-bottom: $mobile-padding;
+        padding: 0 $mobile-grid-padding/2;
+        margin-bottom: $mobile-grid-padding;
     }
 
 
