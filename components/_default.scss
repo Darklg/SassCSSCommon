@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.10.0
+Version: 2.11.0
 License: MIT
 */
 
@@ -436,55 +436,34 @@ a {
     &:focus:not(:focus-visible) {
         outline: none;
     }
-}
 
-/* .99 Opacity avoids a nasty effect on Webkit */
+    /* .99 Opacity avoids a nasty effect on Webkit */
 
-.aimginv {
-    opacity: 0.70;
-}
+    img {
+        opacity: 0.999;
+    }
 
-a img,
-.aimginv:hover,
-.aimg {
-    opacity: 0.999;
-}
-
-.aimg:hover,
-a:hover img {
-    opacity: 0.80;
+    &:hover img {
+        opacity: 0.80;
+    }
 }
 
 /* ----------------------------------------------------------
   Transitions
 ---------------------------------------------------------- */
 
-.trans-col {
-    -webkit-transition: color 0.3s ease;
-    transition: color 0.3s ease;
-}
-
 a img,
-.aimg,
-.aimginv,
-.cssc-btn,
-.trans-opa {
+.cssc-btn {
     outline: 1px solid transparent;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
-}
-
-.trans-all {
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 a,
 input,
 button,
 textarea,
-.cssc-button,
-.trans-button {
+.cssc-button {
     -webkit-transition: border-color 0.3s ease,background 0.3s ease,color 0.3s ease;
     transition: border-color 0.3s ease,background 0.3s ease,color 0.3s ease;
 }
@@ -494,7 +473,7 @@ textarea,
   Thx https://twitter.com/kizmarh/status/889422529269510145
 ---------------------------------------------------------- */
 
-@​media(prefers-reduced-motion:reduce) {
+@media(prefers-reduced-motion:reduce) {
     * {
         transition: none !important;
     }
