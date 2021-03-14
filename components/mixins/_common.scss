@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.21.0
+Version: 0.22.0
 License: MIT
 */
 
@@ -390,12 +390,20 @@ $browserPrefix: '';
     padding: $desktop-padding/2;
 }
 
+%responsive-padding-double {
+    padding: $desktop-padding*2;
+}
+
 %responsive-margin {
     margin: $desktop-padding;
 }
 
 %responsive-margin-half {
     margin: $desktop-padding/2;
+}
+
+%responsive-margin-half {
+    margin: $desktop-padding*2;
 }
 
 %responsive-padding-inv {
@@ -411,12 +419,20 @@ $browserPrefix: '';
         padding: $tablet-padding/2;
     }
 
+    %responsive-padding-double {
+        padding: $tablet-padding*2;
+    }
+
     %responsive-margin {
         margin: $tablet-padding;
     }
 
     %responsive-margin-half {
         margin: $tablet-padding/2;
+    }
+
+    %responsive-margin-half {
+        margin: $tablet-padding*2;
     }
 
     %responsive-padding-inv {
@@ -433,12 +449,20 @@ $browserPrefix: '';
         padding: $mobile-padding/2;
     }
 
+    %responsive-padding-double {
+        padding: $mobile-padding*2;
+    }
+
     %responsive-margin {
         margin: $mobile-padding;
     }
 
     %responsive-margin-half {
         margin: $mobile-padding/2;
+    }
+
+    %responsive-margin-half {
+        margin: $mobile-padding*2;
     }
 
     %responsive-padding-inv {
@@ -508,6 +532,11 @@ $browserPrefix: '';
     padding-bottom: $desktop-padding/2;
 }
 
+%responsive-padding-tb-double {
+    padding-top: $desktop-padding*2;
+    padding-bottom: $desktop-padding*2;
+}
+
 %responsive-margin-tb {
     margin-top: $desktop-padding;
     margin-bottom: $desktop-padding;
@@ -516,6 +545,11 @@ $browserPrefix: '';
 %responsive-margin-tb-half {
     margin-top: $desktop-padding/2;
     margin-bottom: $desktop-padding/2;
+}
+
+%responsive-margin-tb-double {
+    margin-top: $desktop-padding*2;
+    margin-bottom: $desktop-padding*2;
 }
 
 %responsive-padding-tb-inv {
@@ -534,6 +568,11 @@ $browserPrefix: '';
         padding-bottom: $tablet-padding/2;
     }
 
+    %responsive-padding-tb-double {
+        padding-top: $tablet-padding*2;
+        padding-bottom: $tablet-padding*2;
+    }
+
     %responsive-margin-tb {
         margin-top: $tablet-padding;
         margin-bottom: $tablet-padding;
@@ -542,6 +581,11 @@ $browserPrefix: '';
     %responsive-margin-tb-half {
         margin-top: $tablet-padding/2;
         margin-bottom: $tablet-padding/2;
+    }
+
+    %responsive-margin-tb-double {
+        margin-top: $tablet-padding*2;
+        margin-bottom: $tablet-padding*2;
     }
 
     %responsive-padding-tb-inv {
@@ -561,6 +605,11 @@ $browserPrefix: '';
         padding-bottom: $mobile-padding/2;
     }
 
+    %responsive-padding-tb-double {
+        padding-top: $mobile-padding*2;
+        padding-bottom: $mobile-padding*2;
+    }
+
     %responsive-margin-tb {
         margin-top: $mobile-padding;
         margin-bottom: $mobile-padding;
@@ -569,6 +618,11 @@ $browserPrefix: '';
     %responsive-margin-tb-half {
         margin-top: $mobile-padding/2;
         margin-bottom: $mobile-padding/2;
+    }
+
+    %responsive-margin-tb-double {
+        margin-top: $mobile-padding*2;
+        margin-bottom: $mobile-padding*2;
     }
 
     %responsive-padding-tb-inv {
@@ -590,6 +644,11 @@ $browserPrefix: '';
     padding-left: $desktop-padding/2;
 }
 
+%responsive-padding-lr-half {
+    padding-right: $desktop-padding*2;
+    padding-left: $desktop-padding*2;
+}
+
 %responsive-margin-lr {
     margin-right: $desktop-padding;
     margin-left: $desktop-padding;
@@ -598,6 +657,11 @@ $browserPrefix: '';
 %responsive-margin-lr-half {
     margin-right: $desktop-padding/2;
     margin-left: $desktop-padding/2;
+}
+
+%responsive-margin-lr-half {
+    margin-right: $desktop-padding*2;
+    margin-left: $desktop-padding*2;
 }
 
 %responsive-padding-lr-inv {
@@ -616,6 +680,11 @@ $browserPrefix: '';
         padding-left: $tablet-padding/2;
     }
 
+    %responsive-padding-lr-half {
+        padding-right: $tablet-padding*2;
+        padding-left: $tablet-padding*2;
+    }
+
     %responsive-margin-lr {
         margin-right: $tablet-padding;
         margin-left: $tablet-padding;
@@ -624,6 +693,11 @@ $browserPrefix: '';
     %responsive-margin-lr-half {
         margin-right: $tablet-padding/2;
         margin-left: $tablet-padding/2;
+    }
+
+    %responsive-margin-lr-half {
+        margin-right: $tablet-padding*2;
+        margin-left: $tablet-padding*2;
     }
 
     %responsive-padding-lr-inv {
@@ -643,6 +717,11 @@ $browserPrefix: '';
         padding-left: $mobile-padding/2;
     }
 
+    %responsive-padding-lr-half {
+        padding-right: $mobile-padding*2;
+        padding-left: $mobile-padding*2;
+    }
+
     %responsive-margin-lr {
         margin-right: $mobile-padding;
         margin-left: $mobile-padding;
@@ -651,6 +730,11 @@ $browserPrefix: '';
     %responsive-margin-lr-half {
         margin-right: $mobile-padding/2;
         margin-left: $mobile-padding/2;
+    }
+
+    %responsive-margin-lr-half {
+        margin-right: $mobile-padding*2;
+        margin-left: $mobile-padding*2;
     }
 
     %responsive-padding-lr-inv {
