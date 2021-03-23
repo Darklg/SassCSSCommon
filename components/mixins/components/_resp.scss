@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Responsive
+---------------------------------------------------------- */
+
+@mixin resp($point) {
+    @if $point == mobile_only {
+        @media ($mobile_only) { @content; }
+    }
+    @else if $point == mobile_excluded {
+        @media ($mobile_excluded) { @content; }
+    }
+    @else if $point == desktop_excluded {
+        @media ($desktop_excluded) { @content; }
+    }
+    @else if $point == desktop_only {
+        @media ($desktop_only) { @content; }
+    }
+    @else if $point == large_excluded {
+        @media ($large_excluded) { @content; }
+    }
+    @else if $point == large_only {
+        @media ($large_only) { @content; }
+    }
+    @else {
+        @media ($point) { @content; }
+    }
+}

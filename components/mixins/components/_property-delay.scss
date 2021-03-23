@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Property delay
+---------------------------------------------------------- */
+
+// @include cssc_property_delay(li, transition-delay, 0.2s, 3);
+// will produce :
+// li:nth-child(1) { transition-delay: 0.2s; }
+// li:nth-child(2) { transition-delay: 0.4s; }
+// li:nth-child(3) { transition-delay: 0.6s; }
+
+@mixin cssc_property_delay($selector, $properties, $duration:0.3s, $max:10) {
+    @for $i from 1 through $max {
+        #{$selector}:nth-child(#{$i}){
+            @each $property in $properties {
+                #{$property}: $i * $duration;
+            }
+        }
+    }
+}
+@mixin cssc_property_delay_datai($selector, $properties, $duration:0.3s, $max:10) {
+    @for $i from 1 through $max {
+        #{$selector}:nth-child(#{$i}){
+            @each $property in $properties {
+                #{$property}: $i * $duration;
+            }
+        }
+    }
+}

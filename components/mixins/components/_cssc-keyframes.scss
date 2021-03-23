@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Prefixed keyframes
+---------------------------------------------------------- */
+$browserPrefix: '';
+
+/*
+ * Thx to: http://stackoverflow.com/a/23861638
+ *
+ * Ex :
+ *
+ * @include csscKeyframes(rotating) {
+ *    0%, 100% {
+ *        #{$browserPrefix}transform: rotate(0deg);
+ *    }
+ * }
+*/
+
+@mixin csscKeyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        $browserPrefix: '-webkit-' !global;
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        $browserPrefix: '-moz-' !global;
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        $browserPrefix: '-o-' !global;
+        @content;
+    }
+    @keyframes #{$animationName} {
+        $browserPrefix: ' ' !global;
+        @content;
+    }
+}

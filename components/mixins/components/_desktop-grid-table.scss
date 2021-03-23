@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Default vars
+---------------------------------------------------------- */
+
+$desktop-padding: 45px !default;
+$desktop-padding-neg: -45px !default;
+$tablet-padding: 30px !default;
+$tablet-padding-neg: -30px !default;
+$mobile-padding: 15px !default;
+$mobile-padding-neg: -15px !default;
+
+/* ----------------------------------------------------------
+  Desktop grid
+---------------------------------------------------------- */
+
+%desktop-grid-table {
+    & {
+        display: table;
+        display: flex;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    & > * {
+        display: table-cell;
+        display: flex;
+        flex-basis: 0;
+        flex-direction: column;
+        flex-grow: 1;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+
+    & > *:not(:last-child) {
+        padding-right: $desktop-padding/2;
+    }
+
+    & > * + * {
+        padding-left: $desktop-padding/2;
+    }
+}
+
+@media($desktop_excluded) {
+    %desktop-grid-table > *:not(:last-child) {
+        padding-right: $tablet-padding/2;
+    }
+
+    %desktop-grid-table > * + * {
+        padding-left: $tablet-padding/2;
+    }
+}
+
+@media($mobile_only) {
+    %desktop-grid-table,
+    %desktop-grid-table > * {
+        display: block;
+    }
+
+    %desktop-grid-table > * + * {
+        padding-left: 0;
+    }
+
+    %desktop-grid-table > * + * {
+        padding-top: 0;
+    }
+
+    %desktop-grid-table > *:not(:last-child) {
+        margin-bottom: $mobile-padding;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Font-Face
+---------------------------------------------------------- */
+
+// Thx: https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
+
+@mixin cssc-font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src: null;
+
+    @each $ext in $exts {
+        $src: append($src, url(quote($path + "." + $ext)) format(quote($ext)), comma);
+    }
+
+    @font-face {
+        font-family: quote($name);
+        font-style: $style;
+        font-weight: $weight;
+        src: $src;
+    }
+}

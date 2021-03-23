@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Cover image
+---------------------------------------------------------- */
+
+%cssc-cover-image {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ----------------------------------------------------------
+  Absolute cover
+---------------------------------------------------------- */
+
+%absolute-cover {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+/* ----------------------------------------------------------
+  Absolute center
+---------------------------------------------------------- */
+
+%absolute-center {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%,-50%,0);
+    transform: translate3d(-50%,-50%,0);
+}
+
+%absolute-center-top {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+%absolute-center-left {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}

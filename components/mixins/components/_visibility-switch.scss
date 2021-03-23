@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Visibility switch
+---------------------------------------------------------- */
+
+@mixin csscommon_visibility_hidden() {
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease,visibility 0.3s ease;
+    transition: opacity 0.3s ease,visibility 0.3s ease;
+    pointer-events: none;
+}
+
+%csscommon-visibility-hidden {
+    @include csscommon_visibility_hidden();
+}
+
+@mixin csscommon_visibility_visible {
+    visibility: visible;
+    opacity: 0.999;
+    pointer-events: auto;
+}
+
+%csscommon-visibility-visible {
+    @include csscommon_visibility_visible();
+}
+
+/* Parent hover
+-------------------------- */
+
+%parent-hover-visibility {
+    & {
+        @extend %csscommon-visibility-hidden;
+    }
+
+    *:hover > & {
+        @extend %csscommon-visibility-visible;
+    }
+}
+
+/* Class visibility
+-------------------------- */
+
+%class-visibility {
+    & {
+        @extend %csscommon-visibility-hidden;
+    }
+
+    &.is-visible {
+        @extend %csscommon-visibility-visible;
+    }
+}
+
+/* Attribute visibility
+-------------------------- */
+
+%attribute-visibility {
+    & {
+        @extend %csscommon-visibility-hidden;
+    }
+
+    &[data-is-visible="1"] {
+        @extend %csscommon-visibility-visible;
+    }
+}

@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 0.22.0
+Version: 1.0.0
 License: MIT
 */
 
@@ -19,71 +19,38 @@ $gutter_width: 30 !default;
 $directions_rotate: top right bottom left;
 
 /* ----------------------------------------------------------
+  Components
+---------------------------------------------------------- */
+
+@import "components/absolute-pos";
+@import "components/cssc-font-face";
+@import "components/cssc-gradient";
+@import "components/cssc-hide-scrollbars";
+@import "components/cssc-keyframes";
+@import "components/desktop-grid-table";
+@import "components/grid-dimensions";
+@import "components/property-delay";
+@import "components/resp";
+@import "components/responsive-padding";
+@import "components/visibility-switch";
+
+/* ----------------------------------------------------------
   Black & White
 ---------------------------------------------------------- */
 
-@function black($opacity){
+@function black($opacity) {
     @return rgba(0,0,0,$opacity);
 }
 
-@function white($opacity){
+@function white($opacity) {
     @return rgba(255,255,255,$opacity);
-}
-
-/* ----------------------------------------------------------
-  Property delay
----------------------------------------------------------- */
-
-// @include cssc_property_delay(li, transition-delay, 0.2s, 3);
-// will produce :
-// li:nth-child(1) { transition-delay: 0.2s; }
-// li:nth-child(2) { transition-delay: 0.4s; }
-// li:nth-child(3) { transition-delay: 0.6s; }
-
-@mixin cssc_property_delay($selector, $properties, $duration:0.3s, $max:10) {
-    @for $i from 1 through $max {
-        #{$selector}:nth-child(#{$i}){
-            @each $property in $properties {
-                #{$property}: $i * $duration;
-            }
-        }
-    }
-}
-@mixin cssc_property_delay_datai($selector, $properties, $duration:0.3s, $max:10) {
-    @for $i from 1 through $max {
-        #{$selector}:nth-child(#{$i}){
-            @each $property in $properties {
-                #{$property}: $i * $duration;
-            }
-        }
-    }
-}
-
-/* ----------------------------------------------------------
-  Gradient
----------------------------------------------------------- */
-
-@mixin cssc_gradient($dir, $color, $values...) {
-    /* Build argument list */
-    $args_list: $dir;
-    @each $value in $values {
-        $args_list: $args_list + ',' + rgba($color, $value);
-    }
-
-    /* Build common values */
-    background: transparent no-repeat 0 0;
-    background-image: -webkit-linear-gradient($args_list);
-    background-image: -moz-linear-gradient($args_list);
-    background-image: -ms-linear-gradient($args_list);
-    background-image: linear-gradient($args_list);
 }
 
 /* ----------------------------------------------------------
   Vertical center
 ---------------------------------------------------------- */
 
-%vertical-center-content,
-.vertical-center-content {
+%vertical-center-content {
     & {
         display: -ms-flexbox;
         display: flex;
@@ -120,8 +87,7 @@ $directions_rotate: top right bottom left;
   Justify items
 ---------------------------------------------------------- */
 
-%justify-items,
-.justify-items {
+%justify-items {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -134,134 +100,11 @@ $directions_rotate: top right bottom left;
 }
 
 /* ----------------------------------------------------------
-  Desktop grid
----------------------------------------------------------- */
-
-%desktop-grid-table {
-    & {
-        display: table;
-        display: flex;
-        width: 100%;
-        table-layout: fixed;
-    }
-
-    & > * {
-        display: table-cell;
-        display: flex;
-        flex-basis: 0;
-        flex-direction: column;
-        flex-grow: 1;
-        box-sizing: border-box;
-        vertical-align: top;
-    }
-
-    & > *:not(:last-child) {
-        padding-right: $desktop-padding/2;
-    }
-
-    & > * + * {
-        padding-left: $desktop-padding/2;
-    }
-}
-
-@media($desktop_excluded) {
-    %desktop-grid-table > *:not(:last-child) {
-        padding-right: $tablet-padding/2;
-    }
-
-    %desktop-grid-table > * + * {
-        padding-left: $tablet-padding/2;
-    }
-}
-
-@media($mobile_only) {
-    %desktop-grid-table,
-    %desktop-grid-table > * {
-        display: block;
-    }
-
-    %desktop-grid-table > * + * {
-        padding-left: 0;
-    }
-
-    %desktop-grid-table > * + * {
-        padding-top: 0;
-    }
-
-    %desktop-grid-table > *:not(:last-child) {
-        margin-bottom: $mobile-padding;
-        padding-right: 0;
-        padding-left: 0;
-    }
-}
-
-.desktop-grid-table {
-    @extend %desktop-grid-table;
-}
-
-/* ----------------------------------------------------------
-  Cover image
----------------------------------------------------------- */
-
-%cssc-cover-image {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ----------------------------------------------------------
-  Absolute cover
----------------------------------------------------------- */
-
-%absolute-cover,
-.absolute-cover {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-}
-
-/* ----------------------------------------------------------
-  Absolute center
----------------------------------------------------------- */
-
-%absolute-center {
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate3d(-50%,-50%,0);
-    transform: translate3d(-50%,-50%,0);
-}
-
-%absolute-center-top {
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-}
-
-%absolute-center-left {
-    z-index: 1;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);
-}
-
-/* ----------------------------------------------------------
   Responsive display
 ---------------------------------------------------------- */
 
 /* Hide on mobile devices */
+
 @media($mobile_only) {
     .hide-on-mobile {
         display: none!important;
@@ -269,6 +112,7 @@ $directions_rotate: top right bottom left;
 }
 
 /* Hide on desktop devices */
+
 @media($mobile_excluded) {
     .hide-on-desktop {
         display: none!important;
@@ -276,6 +120,7 @@ $directions_rotate: top right bottom left;
 }
 
 /* Hide on devices larger than tablets */
+
 @media($desktop_only) {
     .hide-above-tablet {
         display: none!important;
@@ -283,73 +128,10 @@ $directions_rotate: top right bottom left;
 }
 
 /* Hide on tablets and smaller devices */
+
 @media($desktop_excluded) {
     .hide-tablet-below {
         display: none!important;
-    }
-}
-
-/* ----------------------------------------------------------
-  Prefixed keyframes
----------------------------------------------------------- */
-$browserPrefix: '';
-
-/*
- * Thx to: http://stackoverflow.com/a/23861638
- *
- * Ex :
- *
- * @include csscKeyframes(rotating) {
- *    0%, 100% {
- *        #{$browserPrefix}transform: rotate(0deg);
- *    }
- * }
-*/
-
-@mixin csscKeyframes($animationName) {
-    @-webkit-keyframes #{$animationName} {
-        $browserPrefix: '-webkit-' !global;
-        @content;
-    }
-    @-moz-keyframes #{$animationName} {
-        $browserPrefix: '-moz-' !global;
-        @content;
-    }
-    @-o-keyframes #{$animationName} {
-        $browserPrefix: '-o-' !global;
-        @content;
-    }
-    @keyframes #{$animationName} {
-        $browserPrefix: ' ' !global;
-        @content;
-    }
-}
-
-/* ----------------------------------------------------------
-  Responsive
----------------------------------------------------------- */
-
-@mixin resp($point) {
-    @if $point == mobile_only {
-        @media ($mobile_only) { @content; }
-    }
-    @else if $point == mobile_excluded {
-        @media ($mobile_excluded) { @content; }
-    }
-    @else if $point == desktop_excluded {
-        @media ($desktop_excluded) { @content; }
-    }
-    @else if $point == desktop_only {
-        @media ($desktop_only) { @content; }
-    }
-    @else if $point == large_excluded {
-        @media ($large_excluded) { @content; }
-    }
-    @else if $point == large_only {
-        @media ($large_only) { @content; }
-    }
-    @else {
-        @media ($point) { @content; }
     }
 }
 
@@ -372,439 +154,6 @@ $browserPrefix: '';
         box-sizing: border-box;
         -webkit-transform: translateZ(0);
         transform: translateZ(0);
-    }
-}
-
-/* ----------------------------------------------------------
-  Responsive padding
----------------------------------------------------------- */
-
-/* All
--------------------------- */
-
-%responsive-padding {
-    padding: $desktop-padding;
-}
-
-%responsive-padding-half {
-    padding: $desktop-padding/2;
-}
-
-%responsive-padding-double {
-    padding: $desktop-padding*2;
-}
-
-%responsive-margin {
-    margin: $desktop-padding;
-}
-
-%responsive-margin-half {
-    margin: $desktop-padding/2;
-}
-
-%responsive-margin-half {
-    margin: $desktop-padding*2;
-}
-
-%responsive-padding-inv {
-    margin: $desktop-padding-neg;
-}
-
-@media($desktop_excluded) {
-    %responsive-padding {
-        padding: $tablet-padding;
-    }
-
-    %responsive-padding-half {
-        padding: $tablet-padding/2;
-    }
-
-    %responsive-padding-double {
-        padding: $tablet-padding*2;
-    }
-
-    %responsive-margin {
-        margin: $tablet-padding;
-    }
-
-    %responsive-margin-half {
-        margin: $tablet-padding/2;
-    }
-
-    %responsive-margin-half {
-        margin: $tablet-padding*2;
-    }
-
-    %responsive-padding-inv {
-        margin: $tablet-padding-neg;
-    }
-}
-
-@media($mobile_only) {
-    %responsive-padding {
-        padding: $mobile-padding;
-    }
-
-    %responsive-padding-half {
-        padding: $mobile-padding/2;
-    }
-
-    %responsive-padding-double {
-        padding: $mobile-padding*2;
-    }
-
-    %responsive-margin {
-        margin: $mobile-padding;
-    }
-
-    %responsive-margin-half {
-        margin: $mobile-padding/2;
-    }
-
-    %responsive-margin-half {
-        margin: $mobile-padding*2;
-    }
-
-    %responsive-padding-inv {
-        margin: $mobile-padding-neg;
-    }
-}
-
-/* Simple
--------------------------- */
-
-@each $direction in $directions_rotate {
-    %responsive-relative-#{$direction} {
-        #{$direction}: $desktop-padding;
-    }
-
-    %responsive-relative-#{$direction}-inv {
-        #{$direction}: $desktop-padding-neg;
-    }
-
-    %responsive-margin-#{$direction} {
-        margin-#{$direction}: $desktop-padding;
-    }
-}
-
-@media($desktop_excluded) {
-    @each $direction in $directions_rotate {
-        %responsive-relative-#{$direction} {
-            #{$direction}: $tablet-padding;
-        }
-
-        %responsive-relative-#{$direction}-inv {
-            #{$direction}: $tablet-padding-neg;
-        }
-
-        %responsive-margin-#{$direction} {
-            margin-#{$direction}: $tablet-padding;
-        }
-    }
-}
-
-@media($mobile_only) {
-    @each $direction in $directions_rotate {
-        %responsive-relative-#{$direction} {
-            #{$direction}: $mobile-padding;
-        }
-
-        %responsive-relative-#{$direction}-inv {
-            #{$direction}: $mobile-padding-neg;
-        }
-
-        %responsive-margin-#{$direction} {
-            margin-#{$direction}: $mobile-padding;
-        }
-    }
-}
-
-/* Top / Bottom
--------------------------- */
-
-%responsive-padding-tb {
-    padding-top: $desktop-padding;
-    padding-bottom: $desktop-padding;
-}
-
-%responsive-padding-tb-half {
-    padding-top: $desktop-padding/2;
-    padding-bottom: $desktop-padding/2;
-}
-
-%responsive-padding-tb-double {
-    padding-top: $desktop-padding*2;
-    padding-bottom: $desktop-padding*2;
-}
-
-%responsive-margin-tb {
-    margin-top: $desktop-padding;
-    margin-bottom: $desktop-padding;
-}
-
-%responsive-margin-tb-half {
-    margin-top: $desktop-padding/2;
-    margin-bottom: $desktop-padding/2;
-}
-
-%responsive-margin-tb-double {
-    margin-top: $desktop-padding*2;
-    margin-bottom: $desktop-padding*2;
-}
-
-%responsive-padding-tb-inv {
-    margin-top: $desktop-padding-neg;
-    margin-bottom: $desktop-padding-neg;
-}
-
-@media($desktop_excluded) {
-    %responsive-padding-tb {
-        padding-top: $tablet-padding;
-        padding-bottom: $tablet-padding;
-    }
-
-    %responsive-padding-tb-half {
-        padding-top: $tablet-padding/2;
-        padding-bottom: $tablet-padding/2;
-    }
-
-    %responsive-padding-tb-double {
-        padding-top: $tablet-padding*2;
-        padding-bottom: $tablet-padding*2;
-    }
-
-    %responsive-margin-tb {
-        margin-top: $tablet-padding;
-        margin-bottom: $tablet-padding;
-    }
-
-    %responsive-margin-tb-half {
-        margin-top: $tablet-padding/2;
-        margin-bottom: $tablet-padding/2;
-    }
-
-    %responsive-margin-tb-double {
-        margin-top: $tablet-padding*2;
-        margin-bottom: $tablet-padding*2;
-    }
-
-    %responsive-padding-tb-inv {
-        margin-top: $tablet-padding-neg;
-        margin-bottom: $tablet-padding-neg;
-    }
-}
-
-@media($mobile_only) {
-    %responsive-padding-tb {
-        padding-top: $mobile-padding;
-        padding-bottom: $mobile-padding;
-    }
-
-    %responsive-padding-tb-half {
-        padding-top: $mobile-padding/2;
-        padding-bottom: $mobile-padding/2;
-    }
-
-    %responsive-padding-tb-double {
-        padding-top: $mobile-padding*2;
-        padding-bottom: $mobile-padding*2;
-    }
-
-    %responsive-margin-tb {
-        margin-top: $mobile-padding;
-        margin-bottom: $mobile-padding;
-    }
-
-    %responsive-margin-tb-half {
-        margin-top: $mobile-padding/2;
-        margin-bottom: $mobile-padding/2;
-    }
-
-    %responsive-margin-tb-double {
-        margin-top: $mobile-padding*2;
-        margin-bottom: $mobile-padding*2;
-    }
-
-    %responsive-padding-tb-inv {
-        margin-top: $mobile-padding-neg;
-        margin-bottom: $mobile-padding-neg;
-    }
-}
-
-/* Left / Right
--------------------------- */
-
-%responsive-padding-lr {
-    padding-right: $desktop-padding;
-    padding-left: $desktop-padding;
-}
-
-%responsive-padding-lr-half {
-    padding-right: $desktop-padding/2;
-    padding-left: $desktop-padding/2;
-}
-
-%responsive-padding-lr-half {
-    padding-right: $desktop-padding*2;
-    padding-left: $desktop-padding*2;
-}
-
-%responsive-margin-lr {
-    margin-right: $desktop-padding;
-    margin-left: $desktop-padding;
-}
-
-%responsive-margin-lr-half {
-    margin-right: $desktop-padding/2;
-    margin-left: $desktop-padding/2;
-}
-
-%responsive-margin-lr-half {
-    margin-right: $desktop-padding*2;
-    margin-left: $desktop-padding*2;
-}
-
-%responsive-padding-lr-inv {
-    margin-right: $desktop-padding-neg;
-    margin-left: $desktop-padding-neg;
-}
-
-@media($desktop_excluded) {
-    %responsive-padding-lr {
-        padding-right: $tablet-padding;
-        padding-left: $tablet-padding;
-    }
-
-    %responsive-padding-lr-half {
-        padding-right: $tablet-padding/2;
-        padding-left: $tablet-padding/2;
-    }
-
-    %responsive-padding-lr-half {
-        padding-right: $tablet-padding*2;
-        padding-left: $tablet-padding*2;
-    }
-
-    %responsive-margin-lr {
-        margin-right: $tablet-padding;
-        margin-left: $tablet-padding;
-    }
-
-    %responsive-margin-lr-half {
-        margin-right: $tablet-padding/2;
-        margin-left: $tablet-padding/2;
-    }
-
-    %responsive-margin-lr-half {
-        margin-right: $tablet-padding*2;
-        margin-left: $tablet-padding*2;
-    }
-
-    %responsive-padding-lr-inv {
-        margin-right: $tablet-padding-neg;
-        margin-left: $tablet-padding-neg;
-    }
-}
-
-@media($mobile_only) {
-    %responsive-padding-lr {
-        padding-right: $mobile-padding;
-        padding-left: $mobile-padding;
-    }
-
-    %responsive-padding-lr-half {
-        padding-right: $mobile-padding/2;
-        padding-left: $mobile-padding/2;
-    }
-
-    %responsive-padding-lr-half {
-        padding-right: $mobile-padding*2;
-        padding-left: $mobile-padding*2;
-    }
-
-    %responsive-margin-lr {
-        margin-right: $mobile-padding;
-        margin-left: $mobile-padding;
-    }
-
-    %responsive-margin-lr-half {
-        margin-right: $mobile-padding/2;
-        margin-left: $mobile-padding/2;
-    }
-
-    %responsive-margin-lr-half {
-        margin-right: $mobile-padding*2;
-        margin-left: $mobile-padding*2;
-    }
-
-    %responsive-padding-lr-inv {
-        margin-right: $mobile-padding-neg;
-        margin-left: $mobile-padding-neg;
-    }
-}
-
-/* ----------------------------------------------------------
-  Visibility switch
----------------------------------------------------------- */
-
-@mixin csscommon_visibility_hidden() {
-    visibility: hidden;
-    opacity: 0;
-    -webkit-transition: opacity 0.3s ease,visibility 0.3s ease;
-    transition: opacity 0.3s ease,visibility 0.3s ease;
-    pointer-events: none;
-}
-
-%csscommon-visibility-hidden {
-    @include csscommon_visibility_hidden();
-}
-
-@mixin csscommon_visibility_visible {
-    visibility: visible;
-    opacity: 0.999;
-    pointer-events: auto;
-}
-
-%csscommon-visibility-visible {
-    @include csscommon_visibility_visible();
-}
-
-/* Parent hover
--------------------------- */
-
-%parent-hover-visibility {
-    & {
-        @extend %csscommon-visibility-hidden;
-    }
-
-    *:hover > & {
-        @extend %csscommon-visibility-visible;
-    }
-}
-
-/* Class visibility
--------------------------- */
-
-%class-visibility {
-    & {
-        @extend %csscommon-visibility-hidden;
-    }
-
-    &.is-visible {
-        @extend %csscommon-visibility-visible;
-    }
-}
-
-/* Attribute visibility
--------------------------- */
-
-%attribute-visibility {
-    & {
-        @extend %csscommon-visibility-hidden;
-    }
-
-    &[data-is-visible="1"] {
-        @extend %csscommon-visibility-visible;
     }
 }
 
@@ -943,61 +292,4 @@ $browserPrefix: '';
         @extend .icon!optional;
         font-size: $font-size*1.6;
     }
-}
-
-/* ----------------------------------------------------------
-  Grid dimensions
----------------------------------------------------------- */
-
-@function get_grid_width($columns) {
-    @return($column_width * $columns + $gutter_width *(-1 + $columns) )* 1px;
-}
-
-@function get_grid_margin($columns) {
-    @return(($column_width + $gutter_width) * $columns)* 1px;
-}
-
-/* ----------------------------------------------------------
-  Font-Face
----------------------------------------------------------- */
-
-// Thx: https://gist.github.com/jonathantneal/d0460e5c2d5d7f9bc5e6
-
-@mixin cssc-font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
-    $src: null;
-
-    @each $ext in $exts {
-        $src: append($src, url(quote($path + "." + $ext)) format(quote($ext)), comma);
-    }
-
-    @font-face {
-        font-family: quote($name);
-        font-style: $style;
-        font-weight: $weight;
-        src: $src;
-    }
-}
-
-/* ----------------------------------------------------------
-  Hide Scrollbar
----------------------------------------------------------- */
-
-@mixin cssc-hide-scrollbars() {
-    & {
-        overflow: auto;
-        -webkit-touch-overflow: auto;
-    }
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    & {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-}
-
-%cssc-hide-scrollbars {
-    @include cssc-hide-scrollbars();
 }

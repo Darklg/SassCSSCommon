@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Gradient
+---------------------------------------------------------- */
+
+@mixin cssc_gradient($dir, $color, $values...) {
+    /* Build argument list */
+    $args_list: $dir;
+    @each $value in $values {
+        $args_list: $args_list + ',' + rgba($color, $value);
+    }
+
+    /* Build common values */
+    background: transparent no-repeat 0 0;
+    background-image: -webkit-linear-gradient($args_list);
+    background-image: -moz-linear-gradient($args_list);
+    background-image: -ms-linear-gradient($args_list);
+    background-image: linear-gradient($args_list);
+}

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Grid dimensions
+---------------------------------------------------------- */
+
+@function get_grid_width($columns) {
+    @return($column_width * $columns + $gutter_width *(-1 + $columns) )* 1px;
+}
+
+@function get_grid_margin($columns) {
+    @return(($column_width + $gutter_width) * $columns)* 1px;
+}

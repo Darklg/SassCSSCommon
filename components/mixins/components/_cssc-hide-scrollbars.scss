@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Hide Scrollbar
+---------------------------------------------------------- */
+
+@mixin cssc-hide-scrollbars() {
+    & {
+        overflow: auto;
+        -webkit-touch-overflow: auto;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
+%cssc-hide-scrollbars {
+    @include cssc-hide-scrollbars();
+}

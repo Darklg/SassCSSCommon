@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Responsive padding
+---------------------------------------------------------- */
+
+/* All
+-------------------------- */
+
+%responsive-padding {
+    padding: $desktop-padding;
+}
+
+%responsive-padding-half {
+    padding: $desktop-padding/2;
+}
+
+%responsive-padding-double {
+    padding: $desktop-padding*2;
+}
+
+%responsive-margin {
+    margin: $desktop-padding;
+}
+
+%responsive-margin-half {
+    margin: $desktop-padding/2;
+}
+
+%responsive-margin-half {
+    margin: $desktop-padding*2;
+}
+
+%responsive-padding-inv {
+    margin: $desktop-padding-neg;
+}
+
+@media($desktop_excluded) {
+    %responsive-padding {
+        padding: $tablet-padding;
+    }
+
+    %responsive-padding-half {
+        padding: $tablet-padding/2;
+    }
+
+    %responsive-padding-double {
+        padding: $tablet-padding*2;
+    }
+
+    %responsive-margin {
+        margin: $tablet-padding;
+    }
+
+    %responsive-margin-half {
+        margin: $tablet-padding/2;
+    }
+
+    %responsive-margin-half {
+        margin: $tablet-padding*2;
+    }
+
+    %responsive-padding-inv {
+        margin: $tablet-padding-neg;
+    }
+}
+
+@media($mobile_only) {
+    %responsive-padding {
+        padding: $mobile-padding;
+    }
+
+    %responsive-padding-half {
+        padding: $mobile-padding/2;
+    }
+
+    %responsive-padding-double {
+        padding: $mobile-padding*2;
+    }
+
+    %responsive-margin {
+        margin: $mobile-padding;
+    }
+
+    %responsive-margin-half {
+        margin: $mobile-padding/2;
+    }
+
+    %responsive-margin-half {
+        margin: $mobile-padding*2;
+    }
+
+    %responsive-padding-inv {
+        margin: $mobile-padding-neg;
+    }
+}
+
+/* Simple
+-------------------------- */
+
+@each $direction in $directions_rotate {
+    %responsive-relative-#{$direction} {
+        #{$direction}: $desktop-padding;
+    }
+
+    %responsive-relative-#{$direction}-inv {
+        #{$direction}: $desktop-padding-neg;
+    }
+
+    %responsive-margin-#{$direction} {
+        margin-#{$direction}: $desktop-padding;
+    }
+}
+
+@media($desktop_excluded) {
+    @each $direction in $directions_rotate {
+        %responsive-relative-#{$direction} {
+            #{$direction}: $tablet-padding;
+        }
+
+        %responsive-relative-#{$direction}-inv {
+            #{$direction}: $tablet-padding-neg;
+        }
+
+        %responsive-margin-#{$direction} {
+            margin-#{$direction}: $tablet-padding;
+        }
+    }
+}
+
+@media($mobile_only) {
+    @each $direction in $directions_rotate {
+        %responsive-relative-#{$direction} {
+            #{$direction}: $mobile-padding;
+        }
+
+        %responsive-relative-#{$direction}-inv {
+            #{$direction}: $mobile-padding-neg;
+        }
+
+        %responsive-margin-#{$direction} {
+            margin-#{$direction}: $mobile-padding;
+        }
+    }
+}
+
+/* Top / Bottom
+-------------------------- */
+
+%responsive-padding-tb {
+    padding-top: $desktop-padding;
+    padding-bottom: $desktop-padding;
+}
+
+%responsive-padding-tb-half {
+    padding-top: $desktop-padding/2;
+    padding-bottom: $desktop-padding/2;
+}
+
+%responsive-padding-tb-double {
+    padding-top: $desktop-padding*2;
+    padding-bottom: $desktop-padding*2;
+}
+
+%responsive-margin-tb {
+    margin-top: $desktop-padding;
+    margin-bottom: $desktop-padding;
+}
+
+%responsive-margin-tb-half {
+    margin-top: $desktop-padding/2;
+    margin-bottom: $desktop-padding/2;
+}
+
+%responsive-margin-tb-double {
+    margin-top: $desktop-padding*2;
+    margin-bottom: $desktop-padding*2;
+}
+
+%responsive-padding-tb-inv {
+    margin-top: $desktop-padding-neg;
+    margin-bottom: $desktop-padding-neg;
+}
+
+@media($desktop_excluded) {
+    %responsive-padding-tb {
+        padding-top: $tablet-padding;
+        padding-bottom: $tablet-padding;
+    }
+
+    %responsive-padding-tb-half {
+        padding-top: $tablet-padding/2;
+        padding-bottom: $tablet-padding/2;
+    }
+
+    %responsive-padding-tb-double {
+        padding-top: $tablet-padding*2;
+        padding-bottom: $tablet-padding*2;
+    }
+
+    %responsive-margin-tb {
+        margin-top: $tablet-padding;
+        margin-bottom: $tablet-padding;
+    }
+
+    %responsive-margin-tb-half {
+        margin-top: $tablet-padding/2;
+        margin-bottom: $tablet-padding/2;
+    }
+
+    %responsive-margin-tb-double {
+        margin-top: $tablet-padding*2;
+        margin-bottom: $tablet-padding*2;
+    }
+
+    %responsive-padding-tb-inv {
+        margin-top: $tablet-padding-neg;
+        margin-bottom: $tablet-padding-neg;
+    }
+}
+
+@media($mobile_only) {
+    %responsive-padding-tb {
+        padding-top: $mobile-padding;
+        padding-bottom: $mobile-padding;
+    }
+
+    %responsive-padding-tb-half {
+        padding-top: $mobile-padding/2;
+        padding-bottom: $mobile-padding/2;
+    }
+
+    %responsive-padding-tb-double {
+        padding-top: $mobile-padding*2;
+        padding-bottom: $mobile-padding*2;
+    }
+
+    %responsive-margin-tb {
+        margin-top: $mobile-padding;
+        margin-bottom: $mobile-padding;
+    }
+
+    %responsive-margin-tb-half {
+        margin-top: $mobile-padding/2;
+        margin-bottom: $mobile-padding/2;
+    }
+
+    %responsive-margin-tb-double {
+        margin-top: $mobile-padding*2;
+        margin-bottom: $mobile-padding*2;
+    }
+
+    %responsive-padding-tb-inv {
+        margin-top: $mobile-padding-neg;
+        margin-bottom: $mobile-padding-neg;
+    }
+}
+
+/* Left / Right
+-------------------------- */
+
+%responsive-padding-lr {
+    padding-right: $desktop-padding;
+    padding-left: $desktop-padding;
+}
+
+%responsive-padding-lr-half {
+    padding-right: $desktop-padding/2;
+    padding-left: $desktop-padding/2;
+}
+
+%responsive-padding-lr-half {
+    padding-right: $desktop-padding*2;
+    padding-left: $desktop-padding*2;
+}
+
+%responsive-margin-lr {
+    margin-right: $desktop-padding;
+    margin-left: $desktop-padding;
+}
+
+%responsive-margin-lr-half {
+    margin-right: $desktop-padding/2;
+    margin-left: $desktop-padding/2;
+}
+
+%responsive-margin-lr-half {
+    margin-right: $desktop-padding*2;
+    margin-left: $desktop-padding*2;
+}
+
+%responsive-padding-lr-inv {
+    margin-right: $desktop-padding-neg;
+    margin-left: $desktop-padding-neg;
+}
+
+@media($desktop_excluded) {
+    %responsive-padding-lr {
+        padding-right: $tablet-padding;
+        padding-left: $tablet-padding;
+    }
+
+    %responsive-padding-lr-half {
+        padding-right: $tablet-padding/2;
+        padding-left: $tablet-padding/2;
+    }
+
+    %responsive-padding-lr-half {
+        padding-right: $tablet-padding*2;
+        padding-left: $tablet-padding*2;
+    }
+
+    %responsive-margin-lr {
+        margin-right: $tablet-padding;
+        margin-left: $tablet-padding;
+    }
+
+    %responsive-margin-lr-half {
+        margin-right: $tablet-padding/2;
+        margin-left: $tablet-padding/2;
+    }
+
+    %responsive-margin-lr-half {
+        margin-right: $tablet-padding*2;
+        margin-left: $tablet-padding*2;
+    }
+
+    %responsive-padding-lr-inv {
+        margin-right: $tablet-padding-neg;
+        margin-left: $tablet-padding-neg;
+    }
+}
+
+@media($mobile_only) {
+    %responsive-padding-lr {
+        padding-right: $mobile-padding;
+        padding-left: $mobile-padding;
+    }
+
+    %responsive-padding-lr-half {
+        padding-right: $mobile-padding/2;
+        padding-left: $mobile-padding/2;
+    }
+
+    %responsive-padding-lr-half {
+        padding-right: $mobile-padding*2;
+        padding-left: $mobile-padding*2;
+    }
+
+    %responsive-margin-lr {
+        margin-right: $mobile-padding;
+        margin-left: $mobile-padding;
+    }
+
+    %responsive-margin-lr-half {
+        margin-right: $mobile-padding/2;
+        margin-left: $mobile-padding/2;
+    }
+
+    %responsive-margin-lr-half {
+        margin-right: $mobile-padding*2;
+        margin-left: $mobile-padding*2;
+    }
+
+    %responsive-padding-lr-inv {
+        margin-right: $mobile-padding-neg;
+        margin-left: $mobile-padding-neg;
+    }
+}
