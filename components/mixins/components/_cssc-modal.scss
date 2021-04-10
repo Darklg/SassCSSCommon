@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+/* ----------------------------------------------------------
+  Modal
+---------------------------------------------------------- */
+
+/* Common
+-------------------------- */
+
+%cssc-modal,
+%cssc-modal--overlay {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+%cssc-modal--inner,
+%cssc-modal--overlay {
+    z-index: 1;
+    position: absolute;
+}
+
+/* Wrapper
+-------------------------- */
+
+%cssc-modal {
+    & {
+        z-index: 999;
+        position: fixed;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    &[data-open="1"],
+    &.is-open {
+        opacity: 0.999;
+        pointer-events: initial;
+    }
+}
+
+/* Overlay / Filter
+-------------------------- */
+
+%cssc-modal--overlay {
+    background-color: rgba(#000,0.1);
+    cursor: pointer;
+}
+
+/* Inner / Content
+-------------------------- */
+
+%cssc-modal--inner {
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+    height: 500px;
+    max-height: 100%;
+    max-width: 100%;
+    background-color: #fff;
+    transform: translate3d(-50%,-50%,0);
+}
+
+@media($mobile_only) {
+    %cssc-modal--inner {
+        height: 100%;
+    }
+}
+
+/* Close
+-------------------------- */
+
+%cssc-modal--close {
+    z-index: 2;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    text-align: center;
+}
