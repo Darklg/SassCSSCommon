@@ -3,7 +3,7 @@
 /*
 Name: Navigation
 URL: http://github.com/Darklg/CSSCommon
-Version: 1.12
+Version: 1.13.0
 License: MIT
 */
 
@@ -303,10 +303,8 @@ License: MIT
 
 .cssc-ariane > li {
     display: inline-block;
-    zoom: 1;
     height: inherit;
     font: inherit;
-    *display: inline;
 }
 
 .cssc-ariane a,
