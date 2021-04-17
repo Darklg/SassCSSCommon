@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 3.0.0
+Version: 3.0.1
 License: MIT
 */
 
@@ -84,11 +84,11 @@ $desktop_excluded: "max-width: " + $tablet-max !default;
 }
 
 @media($desktop_excluded) {
-    .cssc-form .box:first-child {
+    .cssc-form .twoboxes .box:first-child {
         padding-right: $tablet-padding/2;
     }
 
-    .cssc-form .box + .box {
+    .cssc-form .twoboxes .box + .box {
         padding-left: $tablet-padding/2;
     }
 }
