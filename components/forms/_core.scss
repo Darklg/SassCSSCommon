@@ -3,9 +3,23 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.5.9
+Version: 3.0.0
 License: MIT
 */
+
+/* ----------------------------------------------------------
+  Default values
+---------------------------------------------------------- */
+
+$desktop-padding: 45px !default;
+$tablet-padding: 30px !default;
+$mobile-padding: 15px !default;
+$tiny-max: 500px !default;
+$tiny_only: "max-width: " + $tiny-max !default;
+$mobile-max: 767px !default;
+$mobile_only: "max-width: " + $mobile-max !default;
+$tablet-max: 1023px !default;
+$desktop_excluded: "max-width: " + $tablet-max !default;
 
 /* ----------------------------------------------------------
   Form : Core
@@ -38,33 +52,56 @@ License: MIT
 /* Submit box */
 
 .cssc-form .submit-box {
-    z-index: 1;
-    position: relative;
-}
+    & {
+        z-index: 1;
+        position: relative;
+    }
 
-.cssc-form .submit-box button {
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    right: 0;
+    button {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
 
 /* Two boxes side to side */
 
-.cssc-form .twoboxes .box {
-    float: left;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 50%;
+.cssc-form .twoboxes {
+    .box {
+        float: left;
+        box-sizing: border-box;
+        width: 50%;
+    }
+
+    .box:first-child {
+        padding-right: $desktop-padding/2;
+    }
+
+    .box + .box {
+        padding-left: $desktop-padding/2;
+    }
 }
 
-.cssc-form .twoboxes .box:first-child {
-    padding-right: 10px;
+@media($desktop_excluded) {
+    .cssc-form .box:first-child {
+        padding-right: $tablet-padding/2;
+    }
+
+    .cssc-form .box + .box {
+        padding-left: $tablet-padding/2;
+    }
 }
 
-.cssc-form .twoboxes .box + .box {
-    padding-left: 10px;
+@media($mobile_only) {
+    .cssc-form .twoboxes .box + .box,
+    .cssc-form .twoboxes .box {
+        display: block;
+        float: none;
+        width: auto;
+        padding-right: 0!important;
+        padding-left: 0!important;
+    }
 }
 
 /* Labels
@@ -120,6 +157,7 @@ button {
 
 /* Reset */
 
+%inputreset,
 .inputreset,
 .inputbase,
 .cssc-form textarea,
@@ -146,8 +184,6 @@ button {
 
 .cssc-form .fake-input {
     display: inline-block;
-    zoom: 1;
-    *display: inline;
 }
 
 .cssc-form .fake-input,
@@ -157,40 +193,43 @@ button {
 
 /* Select */
 
+%cssc-select,
 .cssc-select {
-    display: block;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 100%;
-    border: none;
-    border-radius: 0;
-    overflow: hidden;
-    text-align: left;
-    text-indent: 0.01px;
-    text-overflow: ellipsis;
-    font: inherit;
-    line-height: 1;
-    white-space: nowrap;
-    color: inherit;
-    background: transparent;
-    cursor: pointer;
-    -ms-appearance: none;
-}
+    & {
+        display: block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        border: none;
+        border-radius: 0;
+        overflow: hidden;
+        text-align: left;
+        text-indent: 0.01px;
+        text-overflow: ellipsis;
+        font: inherit;
+        line-height: 1;
+        white-space: nowrap;
+        color: inherit;
+        background: transparent;
+        cursor: pointer;
+        -ms-appearance: none;
+    }
 
-.cssc-select[multiple] {
-    overflow-y: auto;
-}
+    &[multiple] {
+        overflow-y: auto;
+    }
 
-.cssc-select::-ms-expand {
-    display: none;
-}
+    &::-ms-expand {
+        display: none;
+    }
 
-.cssc-select:focus {
-    outline: none;
+    &:focus {
+        outline: none;
+    }
 }
 
 /* Help
@@ -225,22 +264,17 @@ button {
 }
 
 /* Append form
-   ----------------------- */
+----------------------- */
 
 .form-append {
-    min-height: 1px;
-}
+    & {
+        min-height: 1px;
+    }
 
-.form-append:after {
-    content: '';
-    display: table;
-    clear: both;
-    width: 100%;
-}
-
-.form-append > * {
-    float: left;
-    width: auto;
+    & > * {
+        float: left;
+        width: auto;
+    }
 }
 
 /* Responsive float form
@@ -248,7 +282,7 @@ button {
 
 /* fix float form */
 
-@media(max-width:720px) {
+@media($mobile_only) {
     .float-form.cssc-form--responsive .box {
         padding-left: 0!important;
     }
@@ -264,17 +298,5 @@ button {
 
     .float-form.cssc-form--responsive .box .long-label {
         line-height: inherit!important;
-    }
-}
-
-/* fix twoboxes */
-
-@media(max-width:720px) {
-    .cssc-form.cssc-form--responsive .twoboxes .box {
-        display: block;
-        float: none;
-        width: auto;
-        padding-right: 0!important;
-        padding-left: 0!important;
     }
 }
