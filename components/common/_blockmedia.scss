@@ -12,16 +12,15 @@
     display: block;
     z-index: 1;
     position: relative;
-    zoom: 1;
     overflow: hidden;
 }
 
-.bmedia >:first-child {
+.bmedia > :first-child {
     float: left;
     margin-right: 10px;
 }
 
-.bmedia-right >:first-child {
+.bmedia-right > :first-child {
     float: right;
     margin-left: 10px;
 }
