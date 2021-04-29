@@ -49,6 +49,15 @@
     cursor: pointer;
 }
 
+/* Iframe
+** bugfix for Safari iOS when iframes are hijacking click
+** Thx to https://stackoverflow.com/questions/39533016/iframe-with-pointer-eventsnone-hijacks-clicks-in-safari-on-ios
+-------------------------- */
+
+%cssc-modal:not([data-open="1"]):not(.is-open) iframe {
+    display: none;
+}
+
 /* Inner / Content
 -------------------------- */
 
