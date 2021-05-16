@@ -32,12 +32,16 @@ $line-height-em: 1.3em !default;
     p,
     ul,
     li {
-        font: inherit;
-        -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-        hyphens: auto;
-        word-wrap: break-word;
+        @extend %cssc-content-text-elements;
     }
+}
+
+%cssc-content-text-elements {
+    font: inherit;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
 }
 
 /* Titles
