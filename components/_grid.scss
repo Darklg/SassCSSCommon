@@ -3,7 +3,7 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 7.0.0
+Version: 8.0.0
 License: MIT
 */
 
@@ -58,6 +58,7 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
   Core
 ---------------------------------------------------------- */
 
+%cssc-fluid-grid,
 .cssc-grid {
     & {
         display: block;
@@ -85,6 +86,7 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
   Fluid grid
 ---------------------------------------------------------- */
 
+%cssc-fluid-grid,
 .fluid-grid {
     & {
         z-index: 1;
@@ -96,8 +98,8 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 
     & > * {
         box-sizing: border-box;
-        padding: 0 $desktop-grid-padding/2;
         margin-bottom: $desktop-grid-padding;
+        padding: 0 $desktop-grid-padding/2;
     }
 }
 
@@ -116,6 +118,7 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 -------------------------- */
 
 @each $col_name, $percent in $csscommon_grid_dimensions {
+    %cssc-grid--col-#{$col_name} > *,
     .col-#{$col_name} {
         width: $percent;
     }
@@ -125,13 +128,15 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 -------------------------- */
 
 @media($desktop_excluded) {
+    %cssc-fluid-grid,
     .fluid-grid {
         margin: 0 $tablet-grid-padding-neg/2;
     }
 
+    %cssc-fluid-grid > *,
     .fluid-grid > * {
-        padding: 0 $tablet-grid-padding/2;
         margin-bottom: $tablet-grid-padding;
+        padding: 0 $tablet-grid-padding/2;
     }
 
     /* Margin */
@@ -142,6 +147,7 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 
     /* Columns */
     @each $col_name, $percent in $csscommon_grid_dimensions {
+        %cssc-grid--tab--col-#{$col_name} > *,
         .tab--col-#{$col_name} {
             width: $percent;
         }
@@ -149,18 +155,20 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 }
 
 @media($mobile_only) {
+    %cssc-fluid-grid,
     .fluid-grid {
         margin: 0 $mobile-grid-padding-neg/2;
     }
 
+    %cssc-fluid-grid > *,
     .fluid-grid > * {
-        padding: 0 $mobile-grid-padding/2;
         margin-bottom: $mobile-grid-padding;
+        padding: 0 $mobile-grid-padding/2;
     }
-
 
     /* Columns */
     @each $col_name, $percent in $csscommon_grid_dimensions {
+        %cssc-grid--tabv--col-#{$col_name} > *,
         .tabv--col-#{$col_name} {
             width: $percent;
         }
@@ -170,6 +178,7 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 @media($tiny_only) {
     /* Columns */
     @each $col_name, $percent in $csscommon_grid_dimensions {
+        %cssc-grid--mob--col-#{$col_name} > *,
         .mob--col-#{$col_name} {
             width: $percent;
         }
