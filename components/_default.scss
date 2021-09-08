@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: https://github.com/Darklg/CSSCommon
-Version: 2.12.1
+Version: 2.13.0
 License: MIT
 */
 
@@ -470,9 +470,15 @@ textarea,
   Thx https://twitter.com/kizmarh/status/889422529269510145
 ---------------------------------------------------------- */
 
-@media(prefers-reduced-motion:reduce) {
-    * {
-        transition: none !important;
+$csscommon-motion-reduced: '1'!default;
+@if $csscommon-motion-reduced == '1' {
+    @media(prefers-reduced-motion:reduce) {
+        *:before,
+        *:after,
+        * {
+            -webkit-transition: none !important;
+            transition: none !important;
+        }
     }
 }
 
