@@ -3,7 +3,7 @@
 /*
 Name: Forms
 URL: http://github.com/Darklg/CSSCommon
-Version: 3.0.1
+Version: 3.0.2
 License: MIT
 */
 
@@ -75,21 +75,21 @@ $desktop_excluded: "max-width: " + $tablet-max !default;
     }
 
     .box:first-child {
-        padding-right: $desktop-padding/2;
+        padding-right: $desktop-padding*0.5;
     }
 
     .box + .box {
-        padding-left: $desktop-padding/2;
+        padding-left: $desktop-padding*0.5;
     }
 }
 
 @media($desktop_excluded) {
     .cssc-form .twoboxes .box:first-child {
-        padding-right: $tablet-padding/2;
+        padding-right: $tablet-padding*0.5;
     }
 
     .cssc-form .twoboxes .box + .box {
-        padding-left: $tablet-padding/2;
+        padding-left: $tablet-padding*0.5;
     }
 }
 
