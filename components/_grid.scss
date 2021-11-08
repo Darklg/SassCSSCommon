@@ -3,7 +3,7 @@
 /*
 Name: Grids
 URL: http://github.com/Darklg/CSSCommon
-Version: 8.0.0
+Version: 8.1.0
 License: MIT
 */
 
@@ -92,14 +92,14 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
         z-index: 1;
         position: relative;
         width: auto;
-        margin: 0 $desktop-grid-padding-neg/2;
+        margin: 0 $desktop-grid-padding-neg*0.5;
         max-width: none;
     }
 
     & > * {
         box-sizing: border-box;
         margin-bottom: $desktop-grid-padding;
-        padding: 0 $desktop-grid-padding/2;
+        padding: 0 $desktop-grid-padding*0.5;
     }
 }
 
@@ -130,13 +130,13 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 @media($desktop_excluded) {
     %cssc-fluid-grid,
     .fluid-grid {
-        margin: 0 $tablet-grid-padding-neg/2;
+        margin: 0 $tablet-grid-padding-neg*0.5;
     }
 
     %cssc-fluid-grid > *,
     .fluid-grid > * {
         margin-bottom: $tablet-grid-padding;
-        padding: 0 $tablet-grid-padding/2;
+        padding: 0 $tablet-grid-padding*0.5;
     }
 
     /* Margin */
@@ -157,13 +157,13 @@ $mobile-grid-padding-neg: 0-$mobile-grid-padding !default;
 @media($mobile_only) {
     %cssc-fluid-grid,
     .fluid-grid {
-        margin: 0 $mobile-grid-padding-neg/2;
+        margin: 0 $mobile-grid-padding-neg*0.5;
     }
 
     %cssc-fluid-grid > *,
     .fluid-grid > * {
         margin-bottom: $mobile-grid-padding;
-        padding: 0 $mobile-grid-padding/2;
+        padding: 0 $mobile-grid-padding*0.5;
     }
 
     /* Columns */
