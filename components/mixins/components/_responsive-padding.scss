@@ -12,7 +12,7 @@
 }
 
 %responsive-padding-half {
-    padding: $desktop-padding/2;
+    padding: $desktop-padding*0.5;
 }
 
 %responsive-padding-double {
@@ -24,7 +24,7 @@
 }
 
 %responsive-margin-half {
-    margin: $desktop-padding/2;
+    margin: $desktop-padding*0.5;
 }
 
 %responsive-margin-double {
@@ -36,7 +36,7 @@
 }
 
 %responsive-padding-inv-half {
-    margin: $desktop-padding-neg/2;
+    margin: $desktop-padding-neg*0.5;
 }
 
 @media($desktop_excluded) {
@@ -45,7 +45,7 @@
     }
 
     %responsive-padding-half {
-        padding: $tablet-padding/2;
+        padding: $tablet-padding*0.5;
     }
 
     %responsive-padding-double {
@@ -57,7 +57,7 @@
     }
 
     %responsive-margin-half {
-        margin: $tablet-padding/2;
+        margin: $tablet-padding*0.5;
     }
 
     %responsive-margin-double {
@@ -69,7 +69,7 @@
     }
 
     %responsive-padding-inv-half {
-        margin: $tablet-padding-neg/2;
+        margin: $tablet-padding-neg*0.5;
     }
 }
 
@@ -79,7 +79,7 @@
     }
 
     %responsive-padding-half {
-        padding: $mobile-padding/2;
+        padding: $mobile-padding*0.5;
     }
 
     %responsive-padding-double {
@@ -91,7 +91,7 @@
     }
 
     %responsive-margin-half {
-        margin: $mobile-padding/2;
+        margin: $mobile-padding*0.5;
     }
 
     %responsive-margin-double {
@@ -103,7 +103,7 @@
     }
 
     %responsive-padding-inv-half {
-        margin: $mobile-padding-neg/2;
+        margin: $mobile-padding-neg*0.5;
     }
 }
 
@@ -165,8 +165,8 @@
 }
 
 %responsive-padding-tb-half {
-    padding-top: $desktop-padding/2;
-    padding-bottom: $desktop-padding/2;
+    padding-top: $desktop-padding*0.5;
+    padding-bottom: $desktop-padding*0.5;
 }
 
 %responsive-padding-tb-double {
@@ -180,8 +180,8 @@
 }
 
 %responsive-margin-tb-half {
-    margin-top: $desktop-padding/2;
-    margin-bottom: $desktop-padding/2;
+    margin-top: $desktop-padding*0.5;
+    margin-bottom: $desktop-padding*0.5;
 }
 
 %responsive-margin-tb-double {
@@ -195,8 +195,8 @@
 }
 
 %responsive-padding-tb-inv-half {
-    margin-top: $desktop-padding-neg/2;
-    margin-bottom: $desktop-padding-neg/2;
+    margin-top: $desktop-padding-neg*0.5;
+    margin-bottom: $desktop-padding-neg*0.5;
 }
 
 @media($desktop_excluded) {
@@ -206,8 +206,8 @@
     }
 
     %responsive-padding-tb-half {
-        padding-top: $tablet-padding/2;
-        padding-bottom: $tablet-padding/2;
+        padding-top: $tablet-padding*0.5;
+        padding-bottom: $tablet-padding*0.5;
     }
 
     %responsive-padding-tb-double {
@@ -221,8 +221,8 @@
     }
 
     %responsive-margin-tb-half {
-        margin-top: $tablet-padding/2;
-        margin-bottom: $tablet-padding/2;
+        margin-top: $tablet-padding*0.5;
+        margin-bottom: $tablet-padding*0.5;
     }
 
     %responsive-margin-tb-double {
@@ -236,8 +236,8 @@
     }
 
     %responsive-padding-tb-inv-half {
-        margin-top: $tablet-padding-neg/2;
-        margin-bottom: $tablet-padding-neg/2;
+        margin-top: $tablet-padding-neg*0.5;
+        margin-bottom: $tablet-padding-neg*0.5;
     }
 }
 
@@ -248,8 +248,8 @@
     }
 
     %responsive-padding-tb-half {
-        padding-top: $mobile-padding/2;
-        padding-bottom: $mobile-padding/2;
+        padding-top: $mobile-padding*0.5;
+        padding-bottom: $mobile-padding*0.5;
     }
 
     %responsive-padding-tb-double {
@@ -263,8 +263,8 @@
     }
 
     %responsive-margin-tb-half {
-        margin-top: $mobile-padding/2;
-        margin-bottom: $mobile-padding/2;
+        margin-top: $mobile-padding*0.5;
+        margin-bottom: $mobile-padding*0.5;
     }
 
     %responsive-margin-tb-double {
@@ -278,8 +278,8 @@
     }
 
     %responsive-padding-tb-inv-half {
-        margin-top: $mobile-padding-neg/2;
-        margin-bottom: $mobile-padding-neg/2;
+        margin-top: $mobile-padding-neg*0.5;
+        margin-bottom: $mobile-padding-neg*0.5;
     }
 }
 
@@ -292,8 +292,8 @@
 }
 
 %responsive-padding-lr-half {
-    padding-right: $desktop-padding/2;
-    padding-left: $desktop-padding/2;
+    padding-right: $desktop-padding*0.5;
+    padding-left: $desktop-padding*0.5;
 }
 
 %responsive-padding-lr-double {
@@ -307,8 +307,8 @@
 }
 
 %responsive-margin-lr-half {
-    margin-right: $desktop-padding/2;
-    margin-left: $desktop-padding/2;
+    margin-right: $desktop-padding*0.5;
+    margin-left: $desktop-padding*0.5;
 }
 
 %responsive-margin-lr-half {
@@ -322,8 +322,8 @@
 }
 
 %responsive-padding-lr-inv-half {
-    margin-right: $desktop-padding-neg/2;
-    margin-left: $desktop-padding-neg/2;
+    margin-right: $desktop-padding-neg*0.5;
+    margin-left: $desktop-padding-neg*0.5;
 }
 
 @media($desktop_excluded) {
@@ -333,8 +333,8 @@
     }
 
     %responsive-padding-lr-half {
-        padding-right: $tablet-padding/2;
-        padding-left: $tablet-padding/2;
+        padding-right: $tablet-padding*0.5;
+        padding-left: $tablet-padding*0.5;
     }
 
     %responsive-padding-lr-double {
@@ -348,8 +348,8 @@
     }
 
     %responsive-margin-lr-half {
-        margin-right: $tablet-padding/2;
-        margin-left: $tablet-padding/2;
+        margin-right: $tablet-padding*0.5;
+        margin-left: $tablet-padding*0.5;
     }
 
     %responsive-margin-lr-half {
@@ -363,8 +363,8 @@
     }
 
     %responsive-padding-lr-inv-half {
-        margin-right: $tablet-padding-neg/2;
-        margin-left: $tablet-padding-neg/2;
+        margin-right: $tablet-padding-neg*0.5;
+        margin-left: $tablet-padding-neg*0.5;
     }
 }
 
@@ -375,8 +375,8 @@
     }
 
     %responsive-padding-lr-half {
-        padding-right: $mobile-padding/2;
-        padding-left: $mobile-padding/2;
+        padding-right: $mobile-padding*0.5;
+        padding-left: $mobile-padding*0.5;
     }
 
     %responsive-padding-lr-double {
@@ -390,8 +390,8 @@
     }
 
     %responsive-margin-lr-half {
-        margin-right: $mobile-padding/2;
-        margin-left: $mobile-padding/2;
+        margin-right: $mobile-padding*0.5;
+        margin-left: $mobile-padding*0.5;
     }
 
     %responsive-margin-lr-half {
@@ -405,7 +405,7 @@
     }
 
     %responsive-padding-lr-inv-half {
-        margin-right: $mobile-padding-neg/2;
-        margin-left: $mobile-padding-neg/2;
+        margin-right: $mobile-padding-neg*0.5;
+        margin-left: $mobile-padding-neg*0.5;
     }
 }

@@ -34,21 +34,21 @@ $mobile-padding-neg: -15px !default;
     }
 
     & > *:not(:last-child) {
-        padding-right: $desktop-padding/2;
+        padding-right: $desktop-padding*0.5;
     }
 
     & > * + * {
-        padding-left: $desktop-padding/2;
+        padding-left: $desktop-padding*0.5;
     }
 }
 
 @media($desktop_excluded) {
     %desktop-grid-table > *:not(:last-child) {
-        padding-right: $tablet-padding/2;
+        padding-right: $tablet-padding*0.5;
     }
 
     %desktop-grid-table > * + * {
-        padding-left: $tablet-padding/2;
+        padding-left: $tablet-padding*0.5;
     }
 }
 
