@@ -1,0 +1,18 @@
+{
+    "name": "SassCSSCommon",
+    "version": "0.1.1",
+    "description": "A Simple Modular Sass Framework",
+    "scripts":{},
+    "repository":
+    {
+        "type": "git",
+        "url": "git+https://github.com/Darklg/SassCSSCommon.git"
+    },
+    "author": "",
+    "license": "MIT",
+    "bugs":
+    {
+        "url": "https://github.com/Darklg/SassCSSCommon/issues"
+    },
+    "homepage": "https://github.com/Darklg/SassCSSCommon#readme"
+}
