@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: https://github.com/Darklg/CSSCommon
-Version: 2.13.0
+Version: 2.13.1
 License: MIT
 */
 
@@ -151,6 +151,12 @@ input[type="search"] {
         width: 0;
         height: 0;
     }
+}
+
+/* Button */
+
+button {
+    color: inherit;
 }
 
 /* Input type date */
