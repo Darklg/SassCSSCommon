@@ -1,17 +1,15 @@
 {
     "name": "sass-csscommon",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "A Simple Modular Sass Framework",
-    "scripts":{},
-    "repository":
-    {
+    "scripts": {},
+    "repository": {
         "type": "git",
         "url": "git+https://github.com/Darklg/SassCSSCommon.git"
     },
     "author": "",
     "license": "MIT",
-    "bugs":
-    {
+    "bugs": {
         "url": "https://github.com/Darklg/SassCSSCommon/issues"
     },
     "homepage": "https://github.com/Darklg/SassCSSCommon#readme"
