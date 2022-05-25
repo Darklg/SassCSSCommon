@@ -122,6 +122,10 @@
     %responsive-margin-#{$direction} {
         margin-#{$direction}: $desktop-padding;
     }
+
+    %responsive-padding-#{$direction} {
+        padding-#{$direction}: $desktop-padding;
+    }
 }
 
 @media($desktop_excluded) {
@@ -136,6 +140,10 @@
 
         %responsive-margin-#{$direction} {
             margin-#{$direction}: $tablet-padding;
+        }
+
+        %responsive-padding-#{$direction} {
+            padding-#{$direction}: $tablet-padding;
         }
     }
 }
@@ -152,6 +160,10 @@
 
         %responsive-margin-#{$direction} {
             margin-#{$direction}: $mobile-padding;
+        }
+
+        %responsive-padding-#{$direction} {
+            padding-#{$direction}: $mobile-padding;
         }
     }
 }

@@ -4,6 +4,14 @@
   Cover image
 ---------------------------------------------------------- */
 
+%cssc-cover-image-wrapper {
+    z-index: 0;
+    position: relative;
+    padding-top: 100%;
+    height: 0;
+    overflow: hidden;
+}
+
 %cssc-cover-image {
     z-index: 1;
     position: absolute;
