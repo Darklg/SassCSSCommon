@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: https://github.com/Darklg/CSSCommon
-Version: 2.13.1
+Version: 2.14.0
 License: MIT
 */
 
@@ -156,6 +156,7 @@ input[type="search"] {
 /* Button */
 
 button {
+    font: inherit;
     color: inherit;
 }
 
@@ -296,7 +297,7 @@ li {
 }
 
 p {
-    margin-bottom: 18px;
+    margin-bottom: 1.4em;
 }
 
 blockquote p:last-child,
@@ -357,21 +358,16 @@ acronym[title] {
 
 blockquote {
     display: block;
-    padding: 5px 0 5px 10px;
-    border-color: rgba(0,0,0,.1);
-    border-left: 5px solid #DDD;
-    font-size: 12px;
-}
-
-blockquote p {
-    margin-bottom: 4px;
+    padding: 0.5em 0 0.5em 1em;
+    border-left: 5px solid rgba(0,0,0,.1);
+    font-size: inherit;
 }
 
 hr {
     clear: both;
+    margin: 1em 0;
     border: 0;
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #f0f0f0;
+    border-top: 1px solid rgba(0,0,0,.3);
 }
 
 /* ----------------------------------------------------------
@@ -393,6 +389,7 @@ hr {
 
 hr[class*="clearfix"] {
     height: 0;
+    margin: 0;
     border: 0;
     outline: 0;
     background: transparent;
@@ -473,7 +470,7 @@ textarea,
 
 /* ----------------------------------------------------------
   Disable transitions
-  Thx https://twitter.com/kizmarh/status/889422529269510145
+  Thx https://piccalil.li/blog/a-modern-css-reset/
 ---------------------------------------------------------- */
 
 $csscommon-motion-reduced: '1'!default;
@@ -482,8 +479,10 @@ $csscommon-motion-reduced: '1'!default;
         *:before,
         *:after,
         * {
-            -webkit-transition: none !important;
-            transition: none !important;
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
         }
     }
 }
@@ -508,4 +507,22 @@ em em {
 b b,
 strong strong {
     font-weight: normal;
+}
+
+/* ----------------------------------------------------------
+  Visually hidden
+---------------------------------------------------------- */
+
+%cssc-visually-hidden,
+.cssc-visually-hidden,
+%cssc-sr-only,
+.cssc-sr-only {
+    position: absolute!important;
+    top: 0!important;
+    left: -100vw!important;
+    width: 1px!important;
+    height: 1px!important;
+    overflow: hidden!important;
+    white-space: nowrap!important;
+    opacity: 0.001!important;
 }

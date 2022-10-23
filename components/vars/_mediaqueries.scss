@@ -59,15 +59,8 @@ $has_desktop_menu: $desktop_only;
 ---------------------------------------------------------- */
 
 %responsive-selector-type:after {
+    @extend %cssc-sr-only;
     content: '';
-    z-index: 1;
-    position: absolute;
-    top: 0;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    opacity: 0.001;
 }
 
 @media($desktop_only) {
