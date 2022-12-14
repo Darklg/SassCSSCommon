@@ -3,7 +3,7 @@
 /*
 Name: Default
 URL: https://github.com/Darklg/CSSCommon
-Version: 2.14.0
+Version: 2.14.1
 License: MIT
 */
 
@@ -513,10 +513,7 @@ strong strong {
   Visually hidden
 ---------------------------------------------------------- */
 
-%cssc-visually-hidden,
-.cssc-visually-hidden,
-%cssc-sr-only,
-.cssc-sr-only {
+@mixin cssc-visually-hidden {
     position: absolute!important;
     top: 0!important;
     left: -100vw!important;
@@ -526,3 +523,11 @@ strong strong {
     white-space: nowrap!important;
     opacity: 0.001!important;
 }
+
+%cssc-visually-hidden,
+.cssc-visually-hidden,
+%cssc-sr-only,
+.cssc-sr-only {
+    @include cssc-visually-hidden();
+}
+
