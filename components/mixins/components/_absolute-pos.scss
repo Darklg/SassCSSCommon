@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 /* ----------------------------------------------------------
-  Cover image
+  Cover items
 ---------------------------------------------------------- */
 
+%cssc-cover-embed-wrapper,
 %cssc-cover-image-wrapper {
     z-index: 0;
     position: relative;
@@ -11,6 +12,9 @@
     padding-top: 100%;
     overflow: hidden;
 }
+
+/* Image
+-------------------------- */
 
 %cssc-cover-image {
     z-index: 1;
@@ -28,6 +32,19 @@
     }
 
     img {
+        @extend %cssc-cover-image;
+    }
+}
+
+/* Iframe
+-------------------------- */
+
+%cssc-cover-embed-wrapper {
+    & {
+        padding-top: 56.25%;
+    }
+
+    & > iframe {
         @extend %cssc-cover-image;
     }
 }
