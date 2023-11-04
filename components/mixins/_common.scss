@@ -3,7 +3,7 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.1.2
+Version: 2.1.3
 License: MIT
 */
 
@@ -292,5 +292,31 @@ $directions_rotate: top right bottom left;
     &:before {
         @extend .icon!optional;
         font-size: $font-size*1.6;
+    }
+}
+
+/* ----------------------------------------------------------
+  List items
+---------------------------------------------------------- */
+
+%cssc-list-items {
+    & {
+        display: flex;
+        z-index: 0;
+        position: relative;
+        flex-direction: row;
+        flex-wrap: wrap;
+        box-sizing: border-box;
+        width: 100%;
+        margin: -10px;
+    }
+
+    & > * {
+        @extend %responsive-padding-half;
+        z-index: 0;
+        position: relative;
+        box-sizing: border-box;
+        width: 33.3%;
+        padding: 10px;
     }
 }
