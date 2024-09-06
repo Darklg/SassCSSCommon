@@ -3,7 +3,7 @@
 /*
 Name: Default Buttons
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.5.4
+Version: 2.6.0
 License: MIT
 */
 
@@ -104,4 +104,20 @@ License: MIT
 .cssc-button--wide {
     display: block;
     width: 100%;
+}
+
+@media ($mobile_only) {
+    %cssc-button--wide-mobile,
+    .cssc-button--wide-mobile {
+        display: block;
+        width: 100%;
+    }
+}
+
+@media ($tiny_only) {
+    %cssc-button--wide-tiny,
+    .cssc-button--wide-tiny {
+        display: block;
+        width: 100%;
+    }
 }
