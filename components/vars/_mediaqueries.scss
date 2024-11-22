@@ -4,6 +4,8 @@
   Classic media queries
 ---------------------------------------------------------- */
 
+@use "breakpoints" as *;
+
 /* Width
 -------------------------- */
 
@@ -29,8 +31,8 @@ $small_height_excluded: "min-height:"+$screen-big-height !default;
 /* Features
 -------------------------- */
 
-$has_mobile_menu: $desktop_excluded;
-$has_desktop_menu: $desktop_only;
+$has_mobile_menu: $desktop_excluded!default;
+$has_desktop_menu: $desktop_only!default;
 
 /* ----------------------------------------------------------
   Custom media queries
@@ -59,8 +61,15 @@ $has_desktop_menu: $desktop_only;
 ---------------------------------------------------------- */
 
 %responsive-selector-type:after {
-    @extend %cssc-sr-only;
     content: '';
+    position: absolute !important;
+    top: 0 !important;
+    left: -100vw !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    opacity: 0.001 !important;
 }
 
 @media($desktop_only) {
