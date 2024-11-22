@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+@use "../../vars/mediaqueries" as c;
+@use "_default-values" as *;
+
+$directions_rotate: top right bottom left !default;
+
 /* ----------------------------------------------------------
   Responsive padding
 ---------------------------------------------------------- */
@@ -39,7 +44,7 @@
     margin: $desktop-padding-neg*0.5;
 }
 
-@media($desktop_excluded) {
+@media(c.$desktop_excluded) {
     %responsive-padding {
         padding: $tablet-padding;
     }
@@ -73,7 +78,7 @@
     }
 }
 
-@media($mobile_only) {
+@media(c.$mobile_only) {
     %responsive-padding {
         padding: $mobile-padding;
     }
@@ -128,7 +133,7 @@
     }
 }
 
-@media($desktop_excluded) {
+@media(c.$desktop_excluded) {
     @each $direction in $directions_rotate {
         %responsive-relative-#{$direction} {
             #{$direction}: $tablet-padding;
@@ -148,7 +153,7 @@
     }
 }
 
-@media($mobile_only) {
+@media(c.$mobile_only) {
     @each $direction in $directions_rotate {
         %responsive-relative-#{$direction} {
             #{$direction}: $mobile-padding;
@@ -211,7 +216,7 @@
     margin-bottom: $desktop-padding-neg*0.5;
 }
 
-@media($desktop_excluded) {
+@media(c.$desktop_excluded) {
     %responsive-padding-tb {
         padding-top: $tablet-padding;
         padding-bottom: $tablet-padding;
@@ -253,7 +258,7 @@
     }
 }
 
-@media($mobile_only) {
+@media(c.$mobile_only) {
     %responsive-padding-tb {
         padding-top: $mobile-padding;
         padding-bottom: $mobile-padding;
@@ -338,7 +343,7 @@
     margin-left: $desktop-padding-neg*0.5;
 }
 
-@media($desktop_excluded) {
+@media(c.$desktop_excluded) {
     %responsive-padding-lr {
         padding-right: $tablet-padding;
         padding-left: $tablet-padding;
@@ -380,7 +385,7 @@
     }
 }
 
-@media($mobile_only) {
+@media(c.$mobile_only) {
     %responsive-padding-lr {
         padding-right: $mobile-padding;
         padding-left: $mobile-padding;

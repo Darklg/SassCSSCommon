@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+@use "../../vars/mediaqueries" as c;
+@use "_default-values" as *;
+
 /* ----------------------------------------------------------
   Modal
 ---------------------------------------------------------- */
@@ -73,7 +76,7 @@
     transform: translate3d(-50%,-50%,0);
 }
 
-@media($mobile_only) {
+@media(c.$mobile_only) {
     %cssc-modal--inner {
         height: 100%;
     }

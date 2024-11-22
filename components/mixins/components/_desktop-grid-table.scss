@@ -1,15 +1,7 @@
 @charset "UTF-8";
 
-/* ----------------------------------------------------------
-  Default vars
----------------------------------------------------------- */
-
-$desktop-padding: 45px !default;
-$desktop-padding-neg: -45px !default;
-$tablet-padding: 30px !default;
-$tablet-padding-neg: -30px !default;
-$mobile-padding: 15px !default;
-$mobile-padding-neg: -15px !default;
+@use "../../vars/mediaqueries" as c;
+@use "_default-values" as *;
 
 /* ----------------------------------------------------------
   Desktop grid
@@ -42,7 +34,7 @@ $mobile-padding-neg: -15px !default;
     }
 }
 
-@media($desktop_excluded) {
+@media(c.$desktop_excluded) {
     %desktop-grid-table > *:not(:last-child) {
         padding-right: $tablet-padding*0.5;
     }
@@ -52,7 +44,7 @@ $mobile-padding-neg: -15px !default;
     }
 }
 
-@media($mobile_only) {
+@media(c.$mobile_only) {
     %desktop-grid-table,
     %desktop-grid-table > * {
         display: block;

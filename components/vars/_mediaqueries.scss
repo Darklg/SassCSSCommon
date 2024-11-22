@@ -4,29 +4,29 @@
   Classic media queries
 ---------------------------------------------------------- */
 
-@use "breakpoints" as *;
+@use "breakpoints" as b;
 
 /* Width
 -------------------------- */
 
-$tiny_only: "max-width:"+$tiny-max !default;
-$tiny_excluded: "min-width:"+$mobile-min !default;
-$mobile_only: "max-width:"+$mobile-max !default;
-$mobile_excluded: "min-width:"+$tablet-min !default;
-$tabletmid_only: "max-width:"+$tablet-mid !default;
-$tabletmid_excluded: "min-width:"+$tablet-midt !default;
-$desktop_excluded: "max-width:"+$tablet-max !default;
-$desktop_only: "min-width:"+$desktop-min !default;
-$desktopmid_excluded:"max-width:"+$desktop-mid !default;
-$desktopmid_only:"min-width:"+$desktop-midt !default;
-$large_excluded: "max-width:"+$desktop-max !default;
-$large_only: "min-width:"+$large-min !default;
+$tiny_only: "max-width:"+b.$tiny-max !default;
+$tiny_excluded: "min-width:"+b.$mobile-min !default;
+$mobile_only: "max-width:"+b.$mobile-max !default;
+$mobile_excluded: "min-width:"+b.$tablet-min !default;
+$tabletmid_only: "max-width:"+b.$tablet-mid !default;
+$tabletmid_excluded: "min-width:"+b.$tablet-midt !default;
+$desktop_excluded: "max-width:"+b.$tablet-max !default;
+$desktop_only: "min-width:"+b.$desktop-min !default;
+$desktopmid_excluded:"max-width:"+b.$desktop-mid !default;
+$desktopmid_only:"min-width:"+b.$desktop-midt !default;
+$large_excluded: "max-width:"+b.$desktop-max !default;
+$large_only: "min-width:"+b.$large-min !default;
 
 /* Height
 -------------------------- */
 
-$small_height_only: "max-height:"+$screen-small-height !default;
-$small_height_excluded: "min-height:"+$screen-big-height !default;
+$small_height_only: "max-height:"+b.$screen-small-height !default;
+$small_height_excluded: "min-height:"+b.$screen-big-height !default;
 
 /* Features
 -------------------------- */

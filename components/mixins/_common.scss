@@ -3,37 +3,38 @@
 /*
 Name: Common Mixins
 URL: http://github.com/Darklg/CSSCommon
-Version: 2.1.5
+Version: 2.2.0
 License: MIT
 */
-
-$desktop-padding: 45px !default;
-$desktop-padding-neg: -45px !default;
-$tablet-padding: 30px !default;
-$tablet-padding-neg: -30px !default;
-$mobile-padding: 15px !default;
-$mobile-padding-neg: -15px !default;
-$font-size: 13px !default;
-$column_width: 90 !default;
-$gutter_width: 30 !default;
-$directions_rotate: top right bottom left;
 
 /* ----------------------------------------------------------
   Components
 ---------------------------------------------------------- */
 
-@import "components/absolute-pos";
-@import "components/cssc-font-face";
-@import "components/cssc-gradient";
-@import "components/cssc-hide-scrollbars";
-@import "components/cssc-modal";
-@import "components/cssc-keyframes";
-@import "components/desktop-grid-table";
-@import "components/grid-dimensions";
-@import "components/property-delay";
-@import "components/resp";
-@import "components/responsive-padding";
-@import "components/visibility-switch";
+@use "components/absolute-pos" as *;
+@forward "components/absolute-pos";
+@use "components/cssc-font-face" as *;
+@forward "components/cssc-font-face";
+@use "components/cssc-gradient" as *;
+@forward "components/cssc-gradient";
+@use "components/cssc-hide-scrollbars" as *;
+@forward "components/cssc-hide-scrollbars";
+@use "components/cssc-modal" as *;
+@forward "components/cssc-modal";
+@use "components/cssc-keyframes" as *;
+@forward "components/cssc-keyframes";
+@use "components/desktop-grid-table" as *;
+@forward "components/desktop-grid-table";
+@use "components/grid-dimensions" as *;
+@forward "components/grid-dimensions";
+@use "components/property-delay" as *;
+@forward "components/property-delay";
+@use "components/resp" as *;
+@forward "components/resp";
+@use "components/responsive-padding" as *;
+@forward "components/responsive-padding";
+@use "components/visibility-switch" as *;
+@forward "components/visibility-switch";
 
 /* ----------------------------------------------------------
   Black & White
