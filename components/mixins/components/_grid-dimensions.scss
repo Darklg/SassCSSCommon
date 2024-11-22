@@ -4,6 +4,9 @@
   Grid dimensions
 ---------------------------------------------------------- */
 
+$column_width: 90 !default;
+$gutter_width: 20 !default;
+
 @function get_grid_width($columns) {
     @return($column_width * $columns + $gutter_width *(-1 + $columns) )* 1px;
 }
