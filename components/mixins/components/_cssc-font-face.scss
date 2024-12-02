@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+@use "sass:list";
+@use "sass:string";
+
 /* ----------------------------------------------------------
   Font-Face
 ---------------------------------------------------------- */
@@ -10,11 +13,11 @@
     $src: null;
 
     @each $ext in $exts {
-        $src: append($src, url(quote($path + "." + $ext)) format(quote($ext)), comma);
+        $src: list.append($src, url(string.quote($path + "." + $ext)) format(string.quote($ext)), comma);
     }
 
     @font-face {
-        font-family: quote($name);
+        font-family: string.quote($name);
         font-style: $style;
         font-weight: $weight;
         src: $src;
