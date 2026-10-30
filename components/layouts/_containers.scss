@@ -39,6 +39,13 @@ $mobile-padding-neg: -15px !default;
     text-align: left;
 }
 
+[dir="rtl"] {
+    %responsive-centered-container-child,
+    .centered-container > * {
+        text-align: right;
+    }
+}
+
 /* Items
 -------------------------- */
 
